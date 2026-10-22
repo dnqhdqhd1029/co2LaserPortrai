@@ -1,0 +1,1248 @@
+.hmi-root {
+    /* Core color system: edit these values to retheme the complete DWIN GUI. */
+    --hmi-background: #09101f;
+    --hmi-panel: #0d1628;
+    --hmi-card: #111e35;
+    --hmi-card-hover: #162440;
+    --hmi-border: rgba(255, 255, 255, 0.07);
+    --hmi-border-blue: rgba(42, 110, 220, 0.35);
+    --hmi-primary: #1e7ef5;
+    --hmi-primary-dim: rgba(30, 126, 245, 0.18);
+    --hmi-accent: #00cae4;
+    --hmi-accent-dim: rgba(0, 202, 228, 0.15);
+    --hmi-text-primary: #d8e8ff;
+    --hmi-text-secondary: #4e6e9a;
+    --hmi-text-dim: #1e3050;
+    --hmi-success: #22c55e;
+
+    /* Interactive states */
+    --hmi-selected-border-width: 2px;
+    --hmi-control-transition: 140ms;
+}
+
+/* Section 07 export assets: keep modal geometry, surfaces, and icons while
+   leaving every text layer blank for EMVD. */
+.hmi-export-modal-textless {
+    display: contents;
+}
+
+.hmi-export-modal-textless,
+.hmi-export-modal-textless * {
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: none !important;
+}
+
+.hmi-export-modal-textless svg {
+    color: var(--hmi-text-secondary) !important;
+    -webkit-text-fill-color: initial !important;
+}
+
+.hmi-export-modal-textless .hmi-modal__badge {
+    color: #1e7ef5 !important;
+    -webkit-text-fill-color: #1e7ef5 !important;
+}
+
+.hmi-export-modal-textless .hmi-modal__static-action-label {
+    color: #d8e8ff !important;
+    -webkit-text-fill-color: #d8e8ff !important;
+}
+
+.hmi-export-modal-textless .hmi-system-dialog__title {
+    color: var(--hmi-text-primary) !important;
+    -webkit-text-fill-color: var(--hmi-text-primary) !important;
+}
+
+.hmi-export-modal-textless .hmi-system-dialog__icon,
+.hmi-export-modal-textless .hmi-system-dialog__icon svg,
+.hmi-export-modal-textless .hmi-system-dialog__icon svg * {
+    color: #f87171 !important;
+    stroke: #f87171 !important;
+    -webkit-text-fill-color: initial !important;
+    opacity: 1 !important;
+}
+
+.hmi-export-modal-textless .hmi-system-dialog__icon svg circle {
+    fill: #f87171 !important;
+    stroke: none !important;
+}
+
+.hmi-export-modal-textless .hmi-system-dialog__close,
+.hmi-export-modal-textless .hmi-system-dialog__close svg,
+.hmi-export-modal-textless .hmi-system-dialog__close svg * {
+    color: #7a9bbf !important;
+    stroke: #7a9bbf !important;
+    -webkit-text-fill-color: initial !important;
+    opacity: 1 !important;
+}
+
+.hmi-export-modal-textless .hmi-modal__close,
+.hmi-export-modal-textless .hmi-modal__close svg {
+    color: #7a9bbf !important;
+    -webkit-text-fill-color: initial !important;
+}
+
+.hmi-export-modal-textless .hmi-modal__close svg,
+.hmi-export-modal-textless .hmi-modal__close svg * {
+    stroke: #7a9bbf !important;
+    fill: none !important;
+    opacity: 1 !important;
+}
+
+.hmi-export-modal-textless .hmi-modal__keyboard-toggle,
+.hmi-export-modal-textless .hmi-modal__keyboard-toggle svg,
+.hmi-export-modal-textless .hmi-modal__keyboard-toggle svg * {
+    color: #7a9bbf !important;
+    stroke: #7a9bbf !important;
+    fill: none !important;
+    -webkit-text-fill-color: initial !important;
+    opacity: 1 !important;
+}
+
+.hmi-export-modal-textless .hmi-modal__keyboard-toggle[aria-pressed="true"],
+.hmi-export-modal-textless .hmi-modal__keyboard-toggle[aria-pressed="true"] svg,
+.hmi-export-modal-textless .hmi-modal__keyboard-toggle[aria-pressed="true"] svg * {
+    color: #8abcf8 !important;
+    stroke: #8abcf8 !important;
+}
+
+.hmi-export-modal-textless .hmi-camera-keyboard__header,
+.hmi-export-modal-textless .hmi-camera-keyboard__key {
+    color: #d8e8ff !important;
+    -webkit-text-fill-color: #d8e8ff !important;
+}
+
+.hmi-export-modal-textless .hmi-camera-keyboard__header {
+    color: #7a9bbf !important;
+    -webkit-text-fill-color: #7a9bbf !important;
+}
+
+.hmi-export-modal-textless .hmi-camera-keyboard__close,
+.hmi-export-modal-textless .hmi-camera-keyboard__close svg,
+.hmi-export-modal-textless .hmi-camera-keyboard__close svg * {
+    color: #7a9bbf !important;
+    stroke: #7a9bbf !important;
+    fill: none !important;
+    -webkit-text-fill-color: initial !important;
+    opacity: 1 !important;
+}
+
+.hmi-export-modal-textless input::placeholder,
+.hmi-export-modal-textless textarea::placeholder {
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+/* HParamCol +/- triangle controls */
+.hmi-param-control {
+    overflow: hidden;
+}
+
+.hmi-param-control__triangle {
+    position: relative;
+    width: 62px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    background: transparent;
+}
+
+.hmi-param-control__triangle::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 40%;
+    width: 200%;
+    height: 200%;
+    pointer-events: none;
+    opacity: 0.4;
+    border: 1px solid red;
+    background: radial-gradient(
+            circle at 50% 48%,
+            rgba(174, 205, 235, 0.9) 0%,
+            rgba(105, 143, 181, 0.58) 42%,
+            rgba(49, 75, 108, 0.28) 72%,
+            rgba(11, 23, 40, 0) 100%
+    );
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    filter: blur(3px);
+    transform: translate(-50%, -50%);
+    transition: opacity 140ms ease;
+}
+
+.hmi-param-control--dec .hmi-param-control__triangle::before {
+    top: 60%;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.hmi-param-control:not(:disabled):hover .hmi-param-control__triangle::before {
+    opacity: 0.15;
+}
+
+.hmi-param-control__symbol {
+    position: relative;
+    z-index: 2;
+    color: #f1f7ff;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.72);
+}
+
+.hmi-param-control[data-emphasized="true"] .hmi-param-control__triangle {
+    width: 84px;
+    height: 66px;
+}
+
+.hmi-param-control[data-emphasized="true"] .hmi-param-control__symbol {
+    font-size: 44px;
+}
+
+.hmi-param-control--dec .hmi-param-control__symbol {
+    transform: translateY(-2px);
+}
+
+.hmi-param-control:disabled .hmi-param-control__triangle {
+    opacity: 0.35;
+}
+
+/* First mode-selection screen card. Layout and dimensions remain in TSX. */
+.hmi-mode-select-card {
+    flex: 1;
+    height: 100%;
+    max-height: 490px;
+    appearance: none;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    border: var(--hmi-selected-border-width, 2px) solid var(--hmi-border, rgba(255, 255, 255, 0.07));
+    border-radius: 18px;
+    background-color: rgba(16, 27, 48, 0.96);
+    background-image: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.13) 0%,
+            rgba(255, 255, 255, 0.075) 18%,
+            rgba(255, 255, 255, 0.035) 55%,
+            rgba(0, 0, 0, 0.035) 78%,
+            rgba(0, 0, 0, 0.11) 100%
+    );
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.28), 0 8px 18px rgba(0, 0, 0, 0.22);
+    transform: none;
+    background-clip: padding-box;
+    outline: none;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 34px 34px 30px;
+    transition: all 180ms;
+}
+
+.hmi-mode-select-card[data-tone="cyan"] {
+    --mode-accent: #00cae4;
+    color: #00cae4;
+}
+
+.hmi-mode-select-card[data-tone="blue"] {
+    --mode-accent: #1e7ef5;
+    color: #1e7ef5;
+}
+
+.hmi-mode-select-card__title {
+    color: var(--mode-accent);
+}
+
+.hmi-mode-select-card[data-tone="cyan"] .hmi-mode-select-card__title {
+    /*color: #00cae4;*/
+    color: #fff;
+}
+
+.hmi-mode-select-card[data-tone="blue"] .hmi-mode-select-card__title {
+    /*color: #1e7ef5;*/
+    color: #fff;
+}
+
+.hmi-mode-select-card[data-highlighted="true"] {
+    border-style: solid;
+    border-width: 3px;
+    border-color: color-mix(in srgb, var(--mode-accent) 50%, transparent);
+    background-color: rgba(20, 35, 63, 0.98);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.28), 0 8px 18px rgba(0, 0, 0, 0.26), 0 0 12px color-mix(in srgb, var(--mode-accent) 10%, transparent);
+    transform: translateY(-2px);
+}
+
+.hmi-mode-select-card[data-highlighted="true"][data-tone="cyan"] {
+    background-image: linear-gradient(
+            180deg,
+            rgba(87, 231, 244, 0.24) 0%,
+            rgba(0, 202, 228, 0.18) 24%,
+            rgba(0, 202, 228, 0.1) 58%,
+            rgba(0, 114, 137, 0.08) 80%,
+            rgba(0, 0, 0, 0.12) 100%
+    );
+}
+
+.hmi-mode-select-card[data-highlighted="true"][data-tone="blue"] {
+    background-image: linear-gradient(
+            180deg,
+            rgba(111, 173, 255, 0.25) 0%,
+            rgba(30, 126, 245, 0.18) 24%,
+            rgba(30, 126, 245, 0.1) 58%,
+            rgba(15, 67, 142, 0.08) 80%,
+            rgba(0, 0, 0, 0.12) 100%
+    );
+}
+
+.hmi-mode-select-card[data-pressed="true"] {
+    transform: translateY(1px);
+}
+
+/* Shared COS/FRX mode button */
+.hmi-mode-btn {
+    flex: 1;
+    height: 88px;
+    min-height: 88px;
+    border: var(--hmi-selected-border-width) solid var(--hmi-border);
+    border-radius: 12px;
+    background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.085) 0%,
+            rgba(255, 255, 255, 0.045) 100%
+    );
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -2px 5px rgba(0, 0, 0, 0.18),
+    0 3px 6px rgba(0, 0, 0, 0.28);
+    color: var(--hmi-text-secondary);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all var(--hmi-control-transition);
+}
+
+.hmi-mode-btn[data-fill="true"] {
+    height: 100%;
+}
+
+.hmi-mode-btn[data-tone="cyan"] {
+    --hmi-mode-color: #00cae4;
+}
+
+.hmi-mode-btn[data-tone="blue"] {
+    --hmi-mode-color: #1e7ef5;
+}
+
+.hmi-mode-btn[data-active="true"] {
+    border-color: var(--hmi-mode-color);
+    color: var(--hmi-mode-color);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 -2px 5px rgba(0, 0, 0, 0.16),
+    0 3px 6px rgba(0, 0, 0, 0.28);
+}
+
+.hmi-mode-btn[data-active="true"][data-tone="cyan"] {
+    background: linear-gradient(180deg, rgba(0, 202, 228, 0.2) 0%, rgba(0, 202, 228, 0.08) 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), inset 0 -2px 5px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.28), 0 0 12px rgba(0, 202, 228, 0.08);
+}
+
+.hmi-mode-btn[data-active="true"][data-tone="blue"] {
+    background: linear-gradient(180deg, rgba(30, 126, 245, 0.2) 0%, rgba(30, 126, 245, 0.08) 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), inset 0 -2px 5px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.28), 0 0 12px rgba(30, 126, 245, 0.08);
+}
+
+.hmi-mode-btn__icon {
+    width: 100%;
+    height: 14px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    opacity: 0.45;
+    transform: scale(1.1);
+    transition: transform var(--hmi-control-transition);
+    /*/ border: 1px solid red;*/
+}
+
+.hmi-mode-btn[data-prominent="true"] .hmi-mode-btn__icon {
+    height: 42px;
+    transform: scale(1.4);
+}
+
+.hmi-mode-btn[data-active="true"] .hmi-mode-btn__icon {
+    opacity: 1;
+    transform: scale(1.8);
+
+}
+
+.hmi-mode-btn[data-active="true"][data-prominent="true"] .hmi-mode-btn__icon {
+    transform: scale(1.8);
+}
+
+/* LASER MODE 전용 크기 조정 */
+.hmi-laser-mode-btn {
+    height: 108px;
+    min-height: 108px;
+}
+
+.hmi-laser-mode-btn__icon {
+    height: 10px !important;
+    transform: scale(1.2) !important;
+}
+
+
+.hmi-laser-mode-btn[data-active="true"] .hmi-laser-mode-btn__icon {
+    transform: scale(1.6) !important;
+}
+
+/* PULSE MODE 전용 크기 조정 */
+.hmi-pulse-mode-btn {
+    height: 100%;
+    min-height: 88px;
+}
+
+.hmi-pulse-mode-btn__icon {
+    height: 24px !important;
+    transform: scale(1.8) !important;
+}
+
+.hmi-pulse-mode-btn[data-active="true"] .hmi-pulse-mode-btn__icon {
+    transform: scale(2) !important;
+}
+
+/* FRX SHAPE */
+.hmi-frx-shape-section {
+    border-bottom: 1px solid var(--hmi-border);
+}
+
+.hmi-frx-shape-list {
+    display: flex;
+    height: 147px;
+    gap: 12px;
+    padding: 18px;
+}
+
+.hmi-shape-mode-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border: var(--hmi-selected-border-width) solid var(--hmi-border);
+    border-radius: 12px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.085) 0%, rgba(255, 255, 255, 0.045) 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), inset 0 -2px 5px rgba(0, 0, 0, 0.18), 0 3px 6px rgba(0, 0, 0, 0.28);
+    color: var(--hmi-text-secondary);
+    cursor: pointer;
+    transition: all 120ms;
+}
+
+.hmi-shape-mode-btn[data-active="true"] {
+    border-color: var(--hmi-primary);
+    background: linear-gradient(180deg, rgba(46, 130, 255, 0.22) 0%, rgba(46, 130, 255, 0.08) 100%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), inset 0 -2px 5px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.28), 0 0 12px rgba(46, 130, 255, 0.1);
+    color: var(--hmi-primary);
+}
+
+.hmi-shape-mode-btn__icon {
+    width: 100%;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+
+}
+
+.hmi-shape-mode-btn__icon svg {
+    width: 30px;
+    height: 30px;
+    transition: transform var(--hmi-control-transition);
+}
+
+.hmi-shape-mode-btn[data-active="true"] .hmi-shape-mode-btn__icon svg {
+    transform: scale(1.1);
+}
+
+.hmi-shape-mode-btn__label {
+    width: 100%;
+    min-height: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.hmi-shape-mode-btn[data-active="true"] .hmi-shape-mode-btn__label {
+    font-weight: 700;
+}
+
+/* FRX SCAN MODE */
+.hmi-frx-scan-section {
+    border-bottom: 1px solid var(--hmi-border);
+}
+
+.hmi-frx-scan-list {
+    display: flex;
+    gap: 18px;
+    padding: 18px;
+}
+
+.hmi-scan-mode-btn {
+    height: 88px;
+    min-height: 88px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 5px;
+}
+
+.hmi-scan-mode-btn__icon {
+    height: 14px !important;
+    transform: scale(1.4) !important;
+}
+
+.hmi-scan-mode-btn[data-active="true"] .hmi-scan-mode-btn__icon {
+    transform: scale(1.5) !important;
+}
+
+.hmi-mode-btn__label {
+    width: 100%;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    text-align: center;
+
+}
+
+.hmi-mode-btn[data-active="true"] .hmi-mode-btn__label {
+    font-weight: 700;
+}
+
+.hmi-mode-btn[data-prominent="true"] .hmi-mode-btn__label {
+    font-size: 22px;
+}
+
+/* Compact selector pill */
+.hmi-pill {
+    padding: 8px 14px;
+    border: var(--hmi-selected-border-width) solid var(--hmi-border);
+    border-radius: 9px;
+    background: transparent;
+    color: var(--hmi-text-secondary);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: all 120ms;
+}
+
+.hmi-pill[data-tone="cyan"] {
+    --hmi-pill-color: #00cae4;
+}
+
+.hmi-pill[data-tone="blue"] {
+    --hmi-pill-color: #1e7ef5;
+}
+
+.hmi-pill[data-active="true"] {
+    border-color: var(--hmi-pill-color);
+    color: var(--hmi-pill-color);
+    font-weight: 700;
+}
+
+.hmi-pill[data-active="true"][data-tone="cyan"] {
+    background: rgba(0, 202, 228, 0.133);
+}
+
+.hmi-pill[data-active="true"][data-tone="blue"] {
+    background: rgba(30, 126, 245, 0.133);
+}
+
+/* Bottom laser state action */
+.hmi-laser-bar {
+    height: 100px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0d1628;
+    border-top: 1px solid var(--hmi-border);
+}
+
+.hmi-laser-bar__button {
+    width: 380px;
+    height: 68px;
+    border: 2px solid;
+    border-radius: 14px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 180ms;
+}
+
+.hmi-laser-bar__button[data-state="standby"] {
+    border-color: #22c55e;
+    background: rgba(34, 197, 94, .1);
+    color: #4ade80;
+}
+
+.hmi-laser-bar__button[data-state="ready"] {
+    border-color: #f97316;
+    background: rgba(249, 115, 22, .18);
+    color: #fdba74;
+}
+
+.hmi-laser-bar__button[data-state="lasering"] {
+    border-color: #eab308;
+    background: rgba(234, 179, 8, .18);
+    color: #fde047;
+}
+
+.hmi-laser-bar__button[data-state="paused"] {
+    border-color: #4ade80;
+    background: rgba(34, 197, 94, .1);
+    color: #86efac;
+}
+
+.hmi-laser-bar__label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: 0.16em;
+}
+
+/* Shared section heading */
+.hmi-params-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--hmi-border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.hmi-params-header__accent {
+    width: 4px;
+    height: 22px;
+    border-radius: 2px;
+}
+
+.hmi-params-header[data-tone="cyan"] .hmi-params-header__accent {
+    background: #00cae4;
+}
+
+.hmi-params-header[data-tone="blue"] .hmi-params-header__accent {
+    background: #1e7ef5;
+}
+
+.hmi-params-header__label {
+    color: #d8e8ff;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* MEMO / CALL / SAVE state button */
+.hmi-memory-btn {
+    flex: 1;
+    height: 40px;
+    border: var(--hmi-selected-border-width) solid var(--hmi-border);
+    border-radius: 9px;
+    background: rgba(255, 255, 255, .03);
+    color: var(--hmi-text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    cursor: pointer;
+    transition: all var(--hmi-control-transition);
+}
+
+.hmi-memory-btn[data-active="true"] {
+    border-color: rgba(34, 197, 94, .5);
+    background: rgba(34, 197, 94, .1);
+    color: #22c55e;
+}
+
+/* Popup system: MEMO / CALL / SAVE / CAMERA */
+.hmi-system-dialog-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 70;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(4, 9, 18, .78);
+}
+
+.hmi-system-dialog {
+    width: 680px;
+    border: 2px solid rgba(239, 68, 68, .65);
+    border-radius: 18px;
+    overflow: hidden;
+    background: #0f1928;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, .58), 0 0 28px rgba(239, 68, 68, .1);
+}
+
+.hmi-system-dialog__header {
+    min-height: 96px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 30px;
+    border-bottom: 1px solid rgba(239, 68, 68, .3);
+    background: rgba(239, 68, 68, .09);
+}
+
+.hmi-system-dialog__icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(239, 68, 68, .5);
+    border-radius: 12px;
+    background: rgba(239, 68, 68, .14);
+    color: #f87171;
+}
+
+.hmi-system-dialog__icon svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.hmi-system-dialog__icon circle {
+    fill: currentColor;
+    stroke: none;
+}
+
+.hmi-system-dialog__title {
+    margin: 0;
+    color: var(--hmi-text-primary);
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: .02em;
+}
+
+.hmi-system-dialog__close {
+    width: 42px;
+    height: 42px;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid var(--hmi-border);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, .05);
+    color: var(--hmi-text-secondary);
+    cursor: pointer;
+    line-height: 1;
+}
+
+.hmi-system-dialog__close svg,
+.hmi-system-dialog__close svg * {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+}
+
+.hmi-system-dialog__content {
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 36px 40px;
+}
+
+.hmi-system-dialog__message {
+    margin: 0;
+    color: #c9d9ed;
+    font-size: 18px;
+    line-height: 1.55;
+}
+
+.hmi-system-dialog__code {
+    align-self: flex-start;
+    margin-top: 18px;
+    padding: 8px 12px;
+    border: 1px solid var(--hmi-border);
+    border-radius: 7px;
+    background: rgba(0, 0, 0, .22);
+    color: var(--hmi-text-secondary);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    letter-spacing: .04em;
+}
+
+.hmi-system-dialog__footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 18px 24px 22px;
+    border-top: 1px solid var(--hmi-border);
+}
+
+.hmi-system-dialog__button {
+    min-width: 132px;
+    height: 48px;
+    padding: 0 22px;
+    border-radius: 10px;
+    font: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.hmi-system-dialog__button--primary {
+    border: 1px solid #338bf6;
+    background: #1e7ef5;
+    color: #fff;
+}
+
+.hmi-system-dialog__button--secondary {
+    border: 1px solid var(--hmi-border);
+    background: rgba(255, 255, 255, .04);
+    color: var(--hmi-text-secondary);
+}
+
+.hmi-base-layout {
+    position: absolute;
+    inset: 0;
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    background: #09111f;
+    color: #d8e8ff;
+}
+
+.hmi-base-layout__header {
+    height: 76px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 28px;
+    border-bottom: 1px solid var(--hmi-border);
+    background: #0d1628;
+}
+
+.hmi-base-layout__title {
+    flex: 1;
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: .02em;
+}
+
+.hmi-base-layout__exit {
+    min-width: 84px;
+    height: 42px;
+    padding: 0 18px;
+    border-radius: 9px;
+    border: 1px solid var(--hmi-border);
+    background: rgba(255, 255, 255, .05);
+    color: var(--hmi-text-secondary);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.hmi-base-layout__content {
+    min-height: 0;
+    flex: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 20px;
+    padding: 24px 28px 28px;
+}
+
+.hmi-base-layout__panel {
+    min-width: 0;
+    min-height: 0;
+    border: 1px solid var(--hmi-border);
+    border-radius: 16px;
+    background: #0f1928;
+    overflow: hidden;
+}
+
+.hmi-modal-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 60;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(5, 10, 20, .75);
+    backdrop-filter: blur(6px);
+}
+
+.hmi-modal {
+    width: 70%;
+    height: 70%;
+    border-radius: 20px;
+    background: #0f1928;
+    border: 3px solid rgba(42, 110, 220, .55);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.hmi-modal__header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 22px;
+    border-bottom: 2px solid var(--hmi-border);
+    flex-shrink: 0;
+}
+
+.hmi-modal__badge {
+    font-size: 18px;
+    padding: 4px 10px;
+    border-radius: 5px;
+    background: rgba(30, 126, 245, .18);
+    border: 1px solid rgba(30, 126, 245, .25);
+    color: #1e7ef5;
+    font-weight: 700;
+    letter-spacing: .08em;
+}
+
+.hmi-modal__title {
+    flex: 1;
+    color: #d8e8ff;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: .04em;
+}
+
+.hmi-modal__close {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    border: 1px solid var(--hmi-border);
+    background: rgba(255, 255, 255, .05);
+    color: var(--hmi-text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.hmi-modal__close svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+}
+
+.hmi-modal__keyboard-toggle {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    border: 1px solid var(--hmi-border);
+    background: rgba(255, 255, 255, .05);
+    color: var(--hmi-text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hmi-modal__keyboard-toggle[aria-pressed="true"] {
+    border-color: rgba(30, 126, 245, .7);
+    background: rgba(30, 126, 245, .16);
+    color: #8abcf8;
+}
+
+.hmi-modal__keyboard-toggle svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.hmi-modal__body {
+    flex: 1;
+    position: relative;
+    overflow-y: auto;
+    padding: 18px 22px;
+    font-size: 16px;
+}
+
+.hmi-modal__body--camera {
+    overflow: hidden;
+}
+
+.hmi-modal__body--camera .hmi-camera-card {
+    height: 100%;
+}
+
+.hmi-popup-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.hmi-popup-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 58px;
+    padding: 0 16px;
+    border-radius: 12px;
+    border: 1px solid var(--hmi-border);
+    background: rgba(255, 255, 255, .02);
+    color: inherit;
+    text-align: left;
+    transition: all 120ms;
+}
+
+.hmi-popup-card[data-selected="true"] {
+    border: 2px solid #1e7ef5;
+    background: rgba(30, 126, 245, .18);
+}
+
+.hmi-memo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.hmi-memo-card {
+    display: flex;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, .03);
+    border: 1px solid var(--hmi-border);
+}
+
+.hmi-memo-card__content {
+    flex: 1;
+}
+
+.hmi-memo-card__date {
+    margin-bottom: 4px;
+    color: var(--hmi-text-secondary);
+    font-size: 16px;
+    letter-spacing: .06em;
+}
+
+.hmi-memo-card__text {
+    color: #d8e8ff;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.hmi-memo-card__delete {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    border: 1px solid var(--hmi-border);
+    background: none;
+    color: var(--hmi-text-secondary);
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hmi-save-param-card {
+    padding: 8px 14px;
+    border-radius: 9px;
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid var(--hmi-border);
+}
+
+.hmi-save-param-card__key {
+    margin-bottom: 2px;
+    color: var(--hmi-text-secondary);
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.hmi-save-param-card__value {
+    color: #d8e8ff;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.hmi-camera-card {
+    height: 388px;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, .42);
+    position: relative;
+    overflow: hidden;
+    color: rgb(78, 110, 154);
+}
+
+.hmi-camera-keyboard {
+    position: absolute;
+    z-index: 10;
+    left: 22px;
+    right: 22px;
+    bottom: 18px;
+    padding: 10px;
+    border: 1px solid rgba(42, 110, 220, .35);
+    border-radius: 12px;
+    background: rgba(5, 12, 24, .96);
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, .42);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.hmi-camera-keyboard--screen-overlay {
+    inset: 50% 0 0;
+    z-index: 20;
+    padding: 12px 24px 18px;
+    border: 0;
+    border-radius: 0;
+    gap: 7px;
+    box-sizing: border-box;
+}
+
+.hmi-camera-keyboard--screen-overlay .hmi-camera-keyboard__header {
+    height: 34px;
+    font-size: 15px;
+}
+
+.hmi-camera-keyboard--screen-overlay .hmi-camera-keyboard__close {
+    width: 34px;
+    height: 34px;
+}
+
+.hmi-camera-keyboard--screen-overlay .hmi-camera-keyboard__row {
+    flex: 1;
+    gap: 7px;
+}
+
+.hmi-camera-keyboard--screen-overlay .hmi-camera-keyboard__key {
+    flex: 1;
+    min-width: 0;
+    height: auto;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.hmi-camera-keyboard--screen-overlay .hmi-camera-keyboard__key--wide {
+    flex: 1.35;
+}
+
+.hmi-camera-keyboard--screen-overlay .hmi-camera-keyboard__key--space {
+    flex: 4;
+    width: auto;
+}
+
+.hmi-camera-keyboard__header {
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--hmi-text-secondary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .1em;
+}
+
+.hmi-camera-keyboard__close {
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 7px;
+    background: rgba(255, 255, 255, .05);
+    color: #8aa6c4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.hmi-camera-keyboard__close svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+}
+
+.hmi-camera-keyboard__row {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.hmi-camera-keyboard__key {
+    min-width: 42px;
+    height: 34px;
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 7px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, .035));
+    color: #d8e8ff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.hmi-camera-keyboard__key--wide {
+    min-width: 72px;
+}
+
+.hmi-camera-keyboard__key--space {
+    width: 240px;
+}
+
+.hmi-camera-card__placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.hmi-camera-card__message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px;
+    border-radius: 10px;
+    background: rgba(2, 8, 14, .88);
+    box-shadow: 0 0 24px rgba(0, 0, 0, .5);
+}
