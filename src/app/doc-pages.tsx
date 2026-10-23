@@ -231,7 +231,7 @@ export const SECTIONS: {
   {
     id: "09",
     num: "09",
-    label: "Developer Guide",
+    label: "Home Designs",
     icon: (
       <svg
         width={16}

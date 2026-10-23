@@ -1,6 +1,8 @@
 import React, { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { HMIRoot2, HMIState2, HMI2_DEFAULT } from "./hmi2";
+import { HMIState2, HMI2_DEFAULT } from "./hmi2";
+import { PortraitHMIRoot, PortraitHomeDesign, PortraitHomeVariant } from "./portrait-hmi";
+import { PortraitHomeComparison } from "./portrait-home-comparison";
 import {
   SectionId,
   SECTIONS,
@@ -14,7 +16,6 @@ import {
   CurrentIconsPage,
   CurrentUserFlowPage,
   CurrentAssetsPage,
-  CurrentDevGuidePage,
 } from "./current-doc-pages";
 
 function PrototypePage({ onStateChange }: { onStateChange: (s: HMIState2) => void }) {
@@ -26,7 +27,8 @@ function PrototypePage({ onStateChange }: { onStateChange: (s: HMIState2) => voi
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        background: "#070c18",
+        background: "#eef4f8",
+        overflow: "auto",
       }}
     >
       <div
@@ -38,23 +40,23 @@ function PrototypePage({ onStateChange }: { onStateChange: (s: HMIState2) => voi
           marginBottom: 16,
         }}
       >
-        Live Prototype · 1024 × 768 · Interactive
+        Portrait Prototype · 768 × 1024 · Interactive
       </div>
       <div
         style={{
           position: "relative",
-          borderRadius: 14,
+          width: 768,
+          height: 1024,
+          flex: "0 0 auto",
+          borderRadius: 22,
           overflow: "hidden",
           boxShadow:
-            "0 0 0 1px rgba(255,255,255,0.06),0 32px 100px rgba(0,0,0,0.8)",
+            "0 0 0 1px rgba(16,36,62,0.08),0 24px 70px rgba(35,67,92,0.22)",
         }}
       >
-        <HMIRoot2 onStateChange={onStateChange} />
-      </div>
-      <div
-        style={{ fontSize: 9, color: "#1e2d48", marginTop: 14 }}
-      >
-        홈에서 COS 또는 FRX를 탭하여 시작하세요
+        <div>
+          <PortraitHMIRoot onStateChange={onStateChange} />
+        </div>
       </div>
     </div>
   );
@@ -69,6 +71,18 @@ export default function App() {
   const [liveState, setLiveState] = useState<HMIState2>(HMI2_DEFAULT);
   const handleStateChange = useCallback((s: HMIState2) => setLiveState(s), []);
 
+  // Clean 768×1024 mount for DWIN preview capture and future portrait exports.
+  const query = new URLSearchParams(window.location.search);
+  const homeVariant = query.get("homeVariant")?.toUpperCase();
+  if (homeVariant === "A" || homeVariant === "B" || homeVariant === "C" || homeVariant === "D") {
+    return <PortraitHomeDesign variant={homeVariant as PortraitHomeVariant} onCOS={() => undefined} onFRX={() => undefined} />;
+  }
+  if (query.has("homeCompare")) return <PortraitHomeComparison />;
+
+  if (query.has("portraitExport")) {
+    return <PortraitHMIRoot onStateChange={handleStateChange} />;
+  }
+
   const sectionContent = () => {
     if (section === "proto") return <PrototypePage onStateChange={handleStateChange} />;
     if (section === "01") return <CurrentCoverPage />;
@@ -79,7 +93,7 @@ export default function App() {
     if (section === "06") return <CurrentUserFlowPage />;
     if (section === "07") return <ScreensPage liveState={liveState} />;
     if (section === "08") return <CurrentAssetsPage />;
-    if (section === "09") return <CurrentDevGuidePage />;
+    if (section === "09") return <PortraitHomeComparison />;
     return null;
   };
 
