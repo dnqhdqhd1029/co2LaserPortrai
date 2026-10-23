@@ -1,0 +1,53 @@
+.portrait-home-design{position:relative;background:#f3f7fa;overflow:hidden}
+.portrait-home-design__background{position:absolute;inset:0;pointer-events:none}
+.portrait-home-design__modes{position:relative;z-index:1;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.portrait-home-option{border:0;color:#fff;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.portrait-home-option--cos{background:#09377c}
+.portrait-home-option--frx{background:#6d28d9}
+.portrait-home-option__copy{display:flex;flex-direction:column;align-items:center;text-align:center}
+.portrait-home-option__copy b{font-size:58px;font-weight:900;line-height:1;letter-spacing:.035em}
+.portrait-home-option__copy strong{font-size:25px;font-weight:800;line-height:1.2}
+.portrait-home-option__copy small{font-size:18px;font-weight:700;line-height:1.2;color:rgba(255,255,255,.78)}
+.portrait-home-flat-icon{display:block;color:#fff}
+.portrait-home-option__icon,.portrait-home-option__copy{position:relative;z-index:2}
+
+/* A — Vertical Circle */
+.portrait-home-design--a .portrait-home-design__background{background:radial-gradient(circle at 12% 14%,rgba(9,55,124,.055) 0 105px,transparent 106px),radial-gradient(circle at 90% 88%,rgba(109,40,217,.055) 0 125px,transparent 126px)}
+.portrait-home-design--a .portrait-home-design__modes{gap:38px}
+.portrait-home-design--a .portrait-home-option{width:420px;height:420px;flex:0 0 420px;border-radius:50%;flex-direction:column;gap:22px;box-shadow:0 16px 34px rgba(30,55,90,.14)}
+.portrait-home-design--a .portrait-home-option:before{content:"";position:absolute;width:176px;height:176px;border-radius:50%;right:-48px;top:-42px;background:rgba(255,255,255,.085)}
+.portrait-home-design--a .portrait-home-option:after{content:"";position:absolute;width:116px;height:116px;border-radius:50%;left:-24px;bottom:18px;border:18px solid rgba(255,255,255,.055)}
+.portrait-home-design--a .portrait-home-option:active{transform:translateY(2px)}
+.portrait-home-design--a .portrait-home-flat-icon{width:104px;height:104px}
+.portrait-home-design--a .portrait-home-option__copy{gap:10px}
+
+/* B — Vertical Square Card */
+.portrait-home-design--b .portrait-home-design__background{background:linear-gradient(180deg,#fff 0%,#f3f7fa 100%)}
+.portrait-home-design--b .portrait-home-design__modes{gap:34px}
+.portrait-home-design--b .portrait-home-option{width:650px;height:400px;flex:0 0 400px;border-radius:34px;flex-direction:column;gap:25px;box-shadow:0 14px 32px rgba(30,55,90,.13)}
+.portrait-home-design--b .portrait-home-option:before{content:"";position:absolute;width:230px;height:230px;border-radius:50%;right:-76px;top:-92px;background:rgba(255,255,255,.085)}
+.portrait-home-design--b .portrait-home-option:after{content:"";position:absolute;width:142px;height:142px;border-radius:50%;left:-42px;bottom:-48px;border:20px solid rgba(255,255,255,.055)}
+.portrait-home-design--b .portrait-home-option:active{transform:translateY(2px)}
+.portrait-home-design--b .portrait-home-flat-icon{width:116px;height:116px}
+.portrait-home-design--b .portrait-home-option__copy{gap:11px}
+.portrait-home-design--b .portrait-home-option__copy b{font-size:62px}
+
+/* C — Premium Card using the original COS / FRX symbols */
+.portrait-home-design--c .portrait-home-design__background{background:radial-gradient(circle at 8% 8%,rgba(9,55,124,.07) 0 95px,transparent 96px),radial-gradient(circle at 92% 92%,rgba(109,40,217,.07) 0 118px,transparent 119px),linear-gradient(145deg,#fff 0%,#f3f7fa 100%)}
+.portrait-home-design--c .portrait-home-design__modes{gap:34px}
+.portrait-home-design--c .portrait-home-option{width:670px;height:400px;flex:0 0 400px;border-radius:36px;padding:0 44px;display:grid;grid-template-columns:260px 1fr;gap:28px;box-shadow:0 16px 36px rgba(30,55,90,.14)}
+.portrait-home-design--c .portrait-home-option:before{content:"";position:absolute;width:230px;height:230px;border-radius:50%;right:-105px;top:-105px;background:rgba(255,255,255,.075)}
+.portrait-home-design--c .portrait-home-option__icon{width:240px;height:240px;display:grid;place-items:center}
+.portrait-home-design--c .portrait-mode-mark{width:224px;height:224px;margin:0}
+.portrait-home-design--c .portrait-mode-mark--cos{border:0;box-shadow:none}
+.portrait-home-design--c .portrait-mode-mark--cos:after{display:none}
+.portrait-home-design--c .portrait-mode-mark__core{background:#fff;box-shadow:0 0 0 13px rgba(255,255,255,.18)}
+.portrait-home-design--c .portrait-mode-mark--cos i{background:#fff;height:25px;top:15px;transform-origin:2px 90px}
+.portrait-home-design--c .portrait-mode-mark--frx{padding:50px;gap:12px;border:0;background:rgba(255,255,255,.08);box-shadow:none}
+.portrait-home-design--c .portrait-mode-mark--frx i{width:15px;height:15px;background:#fff}
+.portrait-home-design--c .portrait-home-option__copy{align-items:flex-start;text-align:left;gap:12px}
+.portrait-home-design--c .portrait-home-option__copy b{font-size:66px}
+.portrait-home-design--c .portrait-home-option__copy strong{font-size:24px}
+.portrait-home-design--c .portrait-home-option__copy small{font-size:17px}
+
+.portrait-home-option:focus-visible{outline:5px solid #fff;outline-offset:-10px}

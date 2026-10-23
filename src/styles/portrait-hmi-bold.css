@@ -1,0 +1,300 @@
+/* Bold Filled Medical UI refinement */
+.portrait-mode-screen{padding:42px 52px 34px;background:linear-gradient(180deg,#f8fbfe 0%,#fff 42%,#f5f9fc 100%)}
+.portrait-mode-intro{margin-top:52px}.portrait-mode-intro h1{font-size:38px;font-weight:800}
+.portrait-mode-list{gap:20px;margin-top:48px}
+.portrait-mode-card{height:448px;border:0;color:#fff;box-shadow:0 24px 52px rgba(26,74,109,.18);overflow:hidden}
+.portrait-mode-card:before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;top:-105px;right:-105px;background:rgba(255,255,255,.1)}
+.portrait-mode-card--cos{background:linear-gradient(155deg,#14b8a6 0%,#0fa190 100%)}
+.portrait-mode-card--frx{background:linear-gradient(155deg,#3b82f6 0%,#286bd8 100%)}
+.portrait-mode-mark{width:194px;height:194px;margin-bottom:27px}
+.portrait-mode-mark--cos{border-color:rgba(255,255,255,.22);box-shadow:inset 0 0 0 3px rgba(255,255,255,.88),0 0 0 10px rgba(255,255,255,.1)}
+.portrait-mode-mark--cos:after{border-color:rgba(255,255,255,.78)}
+.portrait-mode-mark__core{background:#fff;box-shadow:0 0 0 13px rgba(255,255,255,.2)}
+.portrait-mode-mark--cos i{background:#fff}
+.portrait-mode-mark--frx{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.85);box-shadow:0 0 0 10px rgba(255,255,255,.1)}
+.portrait-mode-mark--frx i{background:#fff}
+.portrait-mode-card__copy b,.portrait-mode-card--cos b,.portrait-mode-card--frx b{color:#fff;font-size:42px;font-weight:850}
+.portrait-mode-card__copy strong{font-size:19px;font-weight:750}.portrait-mode-card__copy small{color:rgba(255,255,255,.78);font-size:13px}
+.portrait-mode-card__arrow{width:48px;height:48px;bottom:19px;background:rgba(255,255,255,.18)!important;border:1px solid rgba(255,255,255,.55);font-weight:700}
+.portrait-mode-footer{background:#eaf1f7}
+
+.portrait-control-header{height:82px;padding:0 24px;background:#fff;box-shadow:0 4px 18px rgba(31,68,96,.06);border-bottom:1px solid #d7e3ef;z-index:6}
+.portrait-back{width:70px;height:44px;border:0;background:#eaf1f7;color:#3e5872}
+.portrait-control-title{margin-left:14px;gap:10px}.portrait-control-title>span{width:44px;height:44px;color:#fff;background:var(--portrait-cos);border:0;box-shadow:0 6px 16px rgba(20,184,166,.25)}
+.portrait-control-title strong{font-size:18px}.portrait-control-title small{display:none}
+.portrait-header-actions{gap:8px}.portrait-top-action{width:50px;height:50px;border:0;border-radius:16px;background:#eaf1f7;color:#3f5c76}
+.portrait-top-action span{font-size:9px}.portrait-top-action[data-active="true"]{border:0;background:var(--portrait-cos);color:#fff}
+.portrait-status-row{height:56px;padding:0 24px;gap:8px;background:#f1f6fb}.portrait-status-copy small{display:none}
+.portrait-status-button{height:38px;border:0;background:#e1eaf2;color:#3f5c76}.portrait-status-button[data-active="true"]{border:0;background:#d7f5f1;color:#087f73}
+
+.portrait-control-body{padding:16px 24px 14px;gap:14px;background:#f8fbfd}
+.portrait-mode-panel,.portrait-parameter-panel{border:0;border-radius:26px;background:#fff;box-shadow:0 5px 18px rgba(40,77,105,.07)}
+.portrait-mode-panel{height:226px;padding:16px 20px}.portrait-parameter-panel{padding:16px 20px;display:flex;flex-direction:column}
+.portrait-section-heading{margin-bottom:11px}.portrait-section-heading--compact{margin-top:12px;margin-bottom:8px}
+.portrait-segment button{height:53px;border:0;background:#e8f0f6;color:#405c76;font-weight:750}
+.portrait-segment button[data-active="true"]{border:0;background:var(--portrait-cos);color:#fff;box-shadow:0 8px 18px rgba(20,184,166,.24)}
+.portrait-segment button[data-active="true"] small{color:rgba(255,255,255,.78)}
+.portrait-param-tabs button{height:66px;border:0;background:#e8f0f6;color:#48627b}
+.portrait-param-tabs button>strong{color:#183550}.portrait-param-tabs button[data-active="true"]{border:0;background:var(--portrait-cos);color:#fff;box-shadow:0 7px 18px rgba(20,184,166,.22)}
+.portrait-param-tabs button[data-active="true"] strong{color:#fff}
+.portrait-adjuster{height:auto;min-height:205px;flex:1;gap:38px}
+.portrait-round-control{width:78px;height:78px;border:0;background:var(--portrait-cos);color:#fff;font-size:42px;font-weight:400;box-shadow:0 10px 22px rgba(20,184,166,.3)}
+.portrait-round-control:active{background:#0f9f90;transform:translateY(2px)}.portrait-round-control:disabled{color:#61758c;background:#dbe5ec;box-shadow:none;opacity:1}
+.portrait-laser-footer{height:128px;padding:16px 24px;background:#f1f6fb}.portrait-laser-button{height:88px}
+
+/* Existing HMI information hierarchy, rearranged for portrait */
+.portrait-mode-screen{padding:42px 44px}
+.portrait-brand{height:54px}
+.portrait-mode-list{flex:1;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
+.portrait-mode-card{height:650px;padding:60px 22px 34px;border-radius:34px;box-shadow:0 14px 30px rgba(26,74,109,.14)}
+.portrait-mode-mark{width:224px;height:224px;margin-bottom:54px}
+.portrait-mode-mark--frx{padding:55px;gap:11px}.portrait-mode-mark--frx i{width:14px;height:14px}
+.portrait-mode-mark--cos i{height:25px;top:15px;transform-origin:2px 90px}
+.portrait-mode-card__copy b,.portrait-mode-card--cos b,.portrait-mode-card--frx b{font-size:50px;line-height:1}
+.portrait-mode-card__copy strong{margin-top:18px;font-size:21px}.portrait-mode-card__copy small{margin-top:13px;font-size:16px;font-weight:600}
+.portrait-mode-card__arrow{width:58px;height:58px;bottom:34px;font-size:29px}
+
+.portrait-control-header{height:92px;padding:0 22px;box-shadow:none}
+.portrait-back{width:82px;height:58px;border-radius:17px;font-size:16px}.portrait-back .portrait-icon{width:24px;height:24px}.portrait-back span{font-size:16px}
+.portrait-header-actions{margin-left:auto;gap:8px;align-items:center}
+.portrait-top-action{width:64px;height:58px;border-radius:17px;gap:3px}.portrait-top-action .portrait-icon{width:23px;height:23px}.portrait-top-action span{font-size:11px;font-weight:800}
+.portrait-status-button{height:58px;padding:0 14px;border-radius:17px}.portrait-status-button .portrait-icon{width:21px;height:21px}.portrait-status-button span{font-size:14px;font-weight:800}
+.portrait-status-button--aim{min-width:126px}.portrait-status-button--aim .portrait-icon:last-child{width:14px}
+.portrait-aim-menu{top:65px;width:150px;padding:8px}.portrait-aim-menu button{height:44px;font-size:15px;font-weight:700}
+
+.portrait-control-body{padding:18px 22px 16px;gap:16px}
+.portrait-mode-panel{height:286px;padding:18px 22px}.portrait-parameter-panel{padding:18px 22px}
+.portrait-section-heading{margin-bottom:13px}.portrait-section-heading>span{height:29px;width:5px}.portrait-section-heading strong{font-size:20px;letter-spacing:.035em}
+.portrait-section-heading--compact{margin-top:16px;margin-bottom:11px}.portrait-section-heading--compact>span{height:29px}
+.portrait-segment{gap:12px}.portrait-segment button{height:72px;border-radius:17px;font-size:22px;font-weight:800}
+.portrait-param-tabs{gap:9px}.portrait-param-tabs button{height:91px;border-radius:16px;padding:10px 5px;gap:7px}
+.portrait-param-tabs button>span{font-size:15px;font-weight:800}.portrait-param-tabs button>strong{font-size:27px;line-height:1}.portrait-param-tabs button small{font-size:14px;margin-left:3px}
+.portrait-adjuster{min-height:250px;gap:40px}
+.portrait-round-control{width:94px;height:94px;font-size:52px;box-shadow:0 7px 16px rgba(20,184,166,.22)}
+.portrait-laser-footer{height:132px;padding:16px 22px;background:#f1f6fb}
+.portrait-laser-footer>div{display:none}
+.portrait-laser-button{width:100%;height:100px;display:flex;align-items:center;justify-content:center;gap:22px;text-align:center;padding:0 40px;border-radius:28px}
+.portrait-laser-button i{width:22px;height:22px;box-shadow:0 0 0 9px #d3f3e1}.portrait-laser-button span{align-self:auto;font-size:27px;letter-spacing:.035em}.portrait-laser-button small{display:none}
+
+/* Minimal Circular Medical Header */
+.portrait-control-header{height:144px;padding:10px 22px;display:flex;flex-direction:column;align-items:stretch;gap:8px;background:#fff}
+.portrait-header-primary{height:58px;display:flex;align-items:center;position:relative}
+.portrait-header-primary .portrait-header-actions{margin-left:auto}
+.portrait-cos-badge{position:absolute;left:50%;top:0;transform:translateX(-50%);height:58px;min-width:112px;padding:0 24px;border-radius:29px;background:var(--portrait-cos);color:#fff;display:flex;align-items:center;justify-content:center;font-size:25px;font-weight:850;letter-spacing:.06em}
+.portrait-header-tools{height:58px;margin:0 -22px -10px;padding:0 22px;display:flex;align-items:center;justify-content:flex-end;gap:10px;background:#f1f6fb;border-top:1px solid #e4edf4}
+.portrait-header-tools .portrait-status-button{height:44px;min-width:112px;background:#fff}
+.portrait-header-tools .portrait-status-button--aim{min-width:142px}
+.portrait-header-tools .portrait-status-button[data-active="true"]{background:#d7f5f1;color:#087f73}
+.portrait-header-tools .portrait-aim-menu{top:51px}
+
+/* Circular section markers */
+.portrait-section-heading>span,.portrait-section-heading--compact>span{width:12px;height:12px;min-width:12px;border-radius:50%;background:var(--portrait-cos)}
+.portrait-section-heading{gap:12px}
+
+/* Single-line minimal icon toolbar — COS badge intentionally omitted */
+.portrait-control-header{height:76px;padding:0 18px;display:flex;flex-direction:row;align-items:center;gap:16px;background:#fff;border-bottom:1px solid #d7e3ef}
+.portrait-header-primary,.portrait-header-tools,.portrait-cos-badge{display:none}
+.portrait-control-header .portrait-back{width:56px;height:56px;padding:0;border:0;border-radius:50%;background:transparent;color:#34516b}
+.portrait-control-header .portrait-back span{display:none}
+.portrait-control-header .portrait-back .portrait-icon{width:26px;height:26px}
+.portrait-control-header .portrait-header-actions{margin-left:auto;display:flex;align-items:center;gap:18px}
+.portrait-control-header .portrait-top-action,.portrait-control-header .portrait-status-button{width:56px;min-width:56px;height:56px;padding:0;border:0;border-radius:50%;background:transparent;color:#34516b;box-shadow:none}
+.portrait-control-header .portrait-top-action span,.portrait-control-header .portrait-status-button:not(.portrait-status-button--aim) span{display:none}
+.portrait-control-header .portrait-top-action .portrait-icon,.portrait-control-header .portrait-status-button .portrait-icon{width:26px;height:26px}
+.portrait-control-header .portrait-top-action[data-active="true"],.portrait-control-header .portrait-status-button[data-active="true"]{background:transparent;color:var(--portrait-cos)}
+.portrait-control-header .portrait-status-button--aim{width:94px;min-width:94px;border-radius:28px;gap:8px;color:var(--portrait-cos)}
+.portrait-control-header .portrait-status-button--aim span{display:block;min-width:20px;font-size:19px;font-weight:850;color:#10243e;text-align:center}
+.portrait-control-header .portrait-status-button--aim .portrait-icon:last-child{width:15px;height:15px;color:#34516b}
+.portrait-control-header .portrait-aim-menu{top:60px;right:0;width:150px}
+
+/* Soft Circular Medical Background — Mode Selection only */
+.portrait-mode-screen{position:relative;isolation:isolate;padding:42px 44px;background:
+  radial-gradient(circle at 12% 18%,rgba(20,184,166,.09) 0 86px,transparent 87px),
+  radial-gradient(circle at 88% 82%,rgba(59,130,246,.08) 0 112px,transparent 113px),
+  linear-gradient(145deg,#f7fafd 0%,#edf5fa 100%)}
+.portrait-mode-screen:before,.portrait-mode-screen:after{content:"";position:absolute;z-index:-1;border-radius:50%;pointer-events:none}
+.portrait-mode-screen:before{width:430px;height:430px;left:-210px;bottom:72px;border:34px solid rgba(20,184,166,.06)}
+.portrait-mode-screen:after{width:520px;height:520px;right:-270px;top:-150px;border:42px solid rgba(59,130,246,.055)}
+.portrait-mode-list{position:relative;z-index:1;height:100%}
+
+/* Q-TECH brand color system */
+.portrait-mode-card--cos{background:#09377c}
+.portrait-mode-card--frx{background:#6d28d9}
+.portrait-mode-screen{background:
+  radial-gradient(circle at 12% 18%,rgba(9,55,124,.08) 0 86px,transparent 87px),
+  radial-gradient(circle at 88% 82%,rgba(109,40,217,.08) 0 112px,transparent 113px),
+  linear-gradient(145deg,#fff 0%,#f3f7fa 100%)}
+.portrait-mode-screen:before{border-color:rgba(9,55,124,.055)}
+.portrait-mode-screen:after{border-color:rgba(109,40,217,.06)}
+.portrait-mode-card{box-shadow:0 14px 30px rgba(16,36,62,.13)}
+
+.portrait-control-body{background:#f3f7fa}
+.portrait-segment button,.portrait-param-tabs button{background:#e6eef5}
+.portrait-segment button[data-active="true"],.portrait-param-tabs button[data-active="true"]{background:#09377c;box-shadow:0 7px 16px rgba(9,55,124,.2)}
+.portrait-round-control{background:#09377c;box-shadow:0 7px 16px rgba(9,55,124,.22)}
+.portrait-round-control:active{background:#0d3168}
+.portrait-section-heading>span,.portrait-section-heading--compact>span{background:#09377c}
+.portrait-control-header .portrait-top-action[data-active="true"],.portrait-control-header .portrait-status-button[data-active="true"]{color:#09377c}
+.portrait-control-header .portrait-status-button--aim{color:#09377c}
+.portrait-aim-menu button[data-active="true"]{background:#edf3fb;color:#09377c}
+
+/* Compact Premium Medical Toolbar */
+.portrait-control-header{height:76px;padding:0 16px;gap:10px;background:#fff;border-bottom:1px solid #d7e3ef}
+.portrait-header-mode-badge{height:44px;min-width:76px;padding:0 18px;border-radius:22px;background:#09377c;color:#fff;display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:850;letter-spacing:.055em;line-height:1}
+.portrait-control-header .portrait-back,.portrait-control-header .portrait-top-action,.portrait-control-header .portrait-status-button{width:48px;min-width:48px;height:48px;border-radius:15px;background:#f3f7fa;color:#09377c}
+.portrait-control-header .portrait-back .portrait-icon,.portrait-control-header .portrait-top-action .portrait-icon,.portrait-control-header .portrait-status-button .portrait-icon{width:24px;height:24px;stroke-width:2}
+.portrait-control-header .portrait-header-actions{margin-left:auto;gap:8px}
+.portrait-control-header .portrait-top-action[data-active="true"],.portrait-control-header .portrait-status-button[data-active="true"]{background:#edf3fb;color:#09377c}
+.portrait-control-header .portrait-status-button--aim{width:78px;min-width:78px;border-radius:15px;gap:5px}
+.portrait-control-header .portrait-status-button--aim span{min-width:16px;font-size:18px}
+.portrait-control-header .portrait-status-button--aim .portrait-icon:last-child{width:13px;height:13px}
+.portrait-control-header .portrait-aim-menu{top:54px}
+
+/* Solid parameter value control */
+.portrait-adjuster{align-items:center;justify-content:center;gap:40px}
+.portrait-value-circle{width:230px;height:230px;flex:0 0 230px;border-radius:50%;background:#09377c;display:flex;align-items:center;justify-content:center}
+.portrait-value-circle__content{display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center}
+.portrait-value-circle__content span{font-size:21px;font-weight:800;line-height:1;letter-spacing:.1em;text-transform:uppercase}
+.portrait-value-circle__content strong{margin-top:12px;font-family:"JetBrains Mono",monospace;font-size:84px;font-weight:800;line-height:.94;letter-spacing:-.07em;color:#fff}
+.portrait-value-circle__content small{margin-top:12px;font-size:24px;font-weight:500;line-height:1;color:#fff}
+.portrait-round-control{width:102px;height:102px;flex:0 0 102px;border-radius:50%;background:#e5edf4;color:#09377c;font-size:48px;font-weight:700;line-height:1;box-shadow:none;display:flex;align-items:center;justify-content:center;padding:0}
+.portrait-round-control:active{background:#d6e2ec;color:#09377c;transform:translateY(2px)}
+.portrait-round-control:disabled{background:#e5edf4;color:#8aa0b5;opacity:1}
+.portrait-hmi-root .portrait-round-control{font-family:Inter,"Noto Sans KR",system-ui,sans-serif;font-size:48px;font-weight:700;line-height:1}
+
+/* Match LASER/PULSE controls to parameter button height */
+.portrait-mode-panel{height:324px}
+.portrait-segment button{height:91px}
+
+/* More compact laser status area */
+.portrait-laser-footer{height:108px;padding:12px 22px}
+.portrait-laser-button{height:84px}
+
+/* Aiming stepped signal selector */
+.portrait-aim-popover{position:absolute;z-index:100;top:54px;right:0;width:218px;padding:18px 16px 14px;border-radius:18px;background:#fff;border:1px solid #d7e3ef;box-shadow:0 12px 28px rgba(16,36,62,.12)}
+.portrait-aim-bars{height:76px;display:flex;align-items:flex-end;justify-content:center;gap:8px}
+.portrait-control-header .portrait-aim-bars button{width:30px;height:72px;min-width:30px;border:0;border-radius:0;background:transparent;display:flex;align-items:flex-end;justify-content:center;padding:0}
+.portrait-aim-bars button i{display:block;width:18px;border-radius:5px 5px 2px 2px;background:#d9e4ee}
+.portrait-aim-bars button[data-active="true"] i{background:#09377c}
+.portrait-aim-bars button:nth-child(1) i{height:18px}.portrait-aim-bars button:nth-child(2) i{height:28px}.portrait-aim-bars button:nth-child(3) i{height:38px}.portrait-aim-bars button:nth-child(4) i{height:50px}.portrait-aim-bars button:nth-child(5) i{height:64px}
+.portrait-control-header .portrait-aim-off{width:100%;height:40px;margin-top:12px;border:0;border-radius:12px;background:#eef3f7;color:#34516b;font-size:14px;font-weight:800;letter-spacing:.08em}
+.portrait-control-header .portrait-aim-off[data-active="true"]{background:#09377c;color:#fff}
+
+/* Restored laser and pulse waveforms */
+.portrait-segment button{flex-direction:column;align-items:center;justify-content:center;gap:9px;white-space:nowrap}
+.portrait-mode-waveform{display:block;width:68px;height:24px;flex:0 0 24px;color:#09377c}
+.portrait-segment button>span{display:block;font-size:inherit;font-weight:inherit;line-height:1}
+.portrait-segment button[data-active="true"] .portrait-mode-waveform{color:#fff}
+
+/* Filled standby safety state */
+.portrait-laser-button[data-state="standby"]{background:#22c55e;border-color:#22c55e;color:#fff}
+.portrait-laser-button[data-state="standby"] i{background:#fff;box-shadow:0 0 0 9px rgba(255,255,255,.22)}
+
+/* Exact optical centering for every header control */
+.portrait-control-header button{display:flex;flex-direction:row;align-items:center;justify-content:center;padding:0;margin:0;line-height:1;gap:0}
+.portrait-control-header button>.portrait-icon{display:block;flex:0 0 auto;margin:0}
+.portrait-control-header .portrait-top-action{gap:0}
+.portrait-control-header .portrait-status-button--aim{gap:6px}
+.portrait-control-header .portrait-status-button--aim span{display:flex;align-items:center;justify-content:center;height:24px;line-height:24px;margin:0}
+
+/* Clean Premium Medical UI depth system */
+.portrait-control-header{box-shadow:0 2px 10px rgba(30,55,90,.035)}
+.portrait-control-header .portrait-back,
+.portrait-control-header .portrait-top-action,
+.portrait-control-header .portrait-status-button{background:#e5edf4;box-shadow:0 2px 7px rgba(30,55,90,.055)}
+.portrait-control-header .portrait-top-action[data-active="true"],
+.portrait-control-header .portrait-status-button[data-active="true"]{background:#e5edf4;color:#09377c}
+.portrait-header-mode-badge{box-shadow:var(--portrait-shadow-selected)}
+
+.portrait-mode-panel,
+.portrait-parameter-panel{box-shadow:var(--portrait-shadow-card)}
+.portrait-segment button[data-active="true"],
+.portrait-param-tabs button[data-active="true"]{box-shadow:var(--portrait-shadow-selected)}
+.portrait-value-circle{box-shadow:var(--portrait-shadow-value)}
+.portrait-round-control{box-shadow:var(--portrait-shadow-control);transition:background-color .12s ease,box-shadow .12s ease,transform .08s ease}
+.portrait-round-control:active{box-shadow:0 2px 6px rgba(30,55,90,.07);transform:translateY(2px) scale(.98)}
+.portrait-round-control:disabled{box-shadow:none;transform:none}
+
+.portrait-laser-button[data-state="standby"]{box-shadow:0 6px 16px rgba(34,197,94,.14)}
+.portrait-laser-button[data-state="ready"]{box-shadow:0 6px 16px rgba(245,158,11,.12)}
+.portrait-laser-button[data-state="lasering"]{box-shadow:0 6px 16px rgba(239,68,68,.12)}
+
+/* Portrait FRX control — shared structure with a Fresh Green theme */
+.portrait-frx-screen{
+  --portrait-shadow-selected:0 8px 16px rgba(109,40,217,.18);
+  --portrait-shadow-value:0 8px 20px rgba(91,33,182,.14);
+  display:flex;flex-direction:column
+}
+.portrait-frx-screen .portrait-header-mode-badge{background:#6d28d9;color:#fff;box-shadow:var(--portrait-shadow-selected)}
+.portrait-frx-screen .portrait-control-header .portrait-top-action,
+.portrait-frx-screen .portrait-control-header .portrait-status-button,
+.portrait-frx-screen .portrait-control-header .portrait-back{color:#5b21b6}
+.portrait-frx-screen .portrait-control-header .portrait-top-action[data-active="true"],
+.portrait-frx-screen .portrait-control-header .portrait-status-button[data-active="true"]{color:#5b21b6}
+.portrait-frx-screen .portrait-aim-bars button[data-active="true"] i{background:#6d28d9}
+.portrait-frx-screen .portrait-aim-off[data-active="true"],
+.portrait-frx-screen .portrait-modal-primary{background:#6d28d9;color:#fff}
+
+.portrait-frx-body{padding:18px 22px 16px;gap:16px;background:#f3f7fa}
+.portrait-frx-mode-panel{height:326px;padding:18px 22px}
+.portrait-frx-screen .portrait-section-heading>span{background:#6d28d9}
+.portrait-frx-shapes{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.portrait-frx-shapes button,
+.portrait-frx-scans button{height:76px;border:0;border-radius:17px;background:#e5edf4;color:#34516b;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font-size:16px;font-weight:800;cursor:pointer}
+.portrait-frx-shapes button[data-active="true"],
+.portrait-frx-scans button[data-active="true"]{background:#6d28d9;color:#fff;box-shadow:var(--portrait-shadow-selected)}
+.portrait-frx-icon{width:30px;height:30px;flex:0 0 30px}
+.portrait-frx-scan-icon{width:42px;height:28px;flex:0 0 28px}
+.portrait-frx-secondary{display:grid;grid-template-columns:.82fr 1.18fr;gap:16px}
+.portrait-frx-secondary .portrait-section-heading--compact{margin-top:15px;margin-bottom:10px}
+.portrait-frx-scans{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.portrait-frx-size-heading>button{margin-left:auto;width:36px;height:30px;padding:0;border:0;border-radius:10px;background:#e5edf4;color:#5b21b6;display:grid;place-items:center;cursor:pointer}
+.portrait-frx-size-heading>button[data-active="true"]{background:#6d28d9;color:#fff}
+.portrait-frx-size-heading>button svg{width:20px;height:20px}
+.portrait-frx-sizes{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.portrait-frx-sizes>div{height:76px;padding:8px 7px;border-radius:17px;background:#e5edf4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.portrait-frx-sizes>div>span{font-size:11px;font-weight:800;letter-spacing:.06em;color:#48627b}
+.portrait-frx-sizes>div>div{width:100%;display:grid;grid-template-columns:30px 1fr 30px;align-items:center;gap:3px}
+.portrait-frx-sizes button{width:30px;height:30px;padding:0;border:0;border-radius:50%;background:#fff;color:#5b21b6;font-size:22px;font-weight:800;line-height:1;display:grid;place-items:center;cursor:pointer}
+.portrait-frx-sizes button:disabled{color:#9aaebe;background:#f3f7fa}
+.portrait-frx-sizes strong{font-family:"JetBrains Mono",monospace;font-size:22px;line-height:1;text-align:center;color:#10243e}
+.portrait-frx-sizes small{margin-left:2px;font-family:Inter,"Noto Sans KR",system-ui,sans-serif;font-size:10px;font-weight:700}
+
+.portrait-frx-parameter-panel{padding:18px 22px}
+.portrait-frx-param-tabs{grid-template-columns:repeat(4,1fr);gap:10px}
+.portrait-frx-screen .portrait-param-tabs button[data-active="true"]{background:#6d28d9;color:#fff;box-shadow:var(--portrait-shadow-selected)}
+.portrait-frx-screen .portrait-param-tabs button[data-active="true"] strong{color:#fff}
+.portrait-frx-adjuster{min-height:250px;gap:40px}
+.portrait-frx-screen .portrait-value-circle{background:#6d28d9;box-shadow:var(--portrait-shadow-value)}
+.portrait-frx-screen .portrait-value-circle__content,
+.portrait-frx-screen .portrait-value-circle__content strong,
+.portrait-frx-screen .portrait-value-circle__content small{color:#fff}
+.portrait-frx-screen .portrait-round-control{background:#e5edf4;color:#5b21b6;box-shadow:var(--portrait-shadow-control)}
+.portrait-frx-screen .portrait-round-control:active{background:#ede9fe;color:#5b21b6}
+.portrait-frx-screen .portrait-round-control:disabled{background:#e5edf4;color:#8aa0b5;box-shadow:none}
+
+/* Unified dark SVG color across COS, FRX and both headers */
+.portrait-control-header button>.portrait-icon,
+.portrait-segment button .portrait-mode-waveform,
+.portrait-frx-shapes button .portrait-frx-icon,
+.portrait-frx-scans button .portrait-frx-scan-icon{color:#263746}
+.portrait-frx-shapes button[data-active="true"] .portrait-frx-icon,
+.portrait-frx-scans button[data-active="true"] .portrait-frx-scan-icon{color:#fff}
+
+/* Portrait boot screen — brand dual-color segmented gauge */
+.portrait-splash-screen{position:relative;display:grid;place-items:center;background:#f3f7fa;isolation:isolate}
+.portrait-splash-screen:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 43%,#fff 0 245px,rgba(255,255,255,.7) 246px,transparent 430px);z-index:-2}
+.portrait-splash-orbit{position:absolute;border-radius:50%;pointer-events:none;z-index:-1}
+.portrait-splash-orbit--navy{width:650px;height:650px;left:-390px;top:-330px;border:44px solid rgba(9,55,124,.055)}
+.portrait-splash-orbit--violet{width:560px;height:560px;right:-350px;bottom:-260px;border:38px solid rgba(109,40,217,.055)}
+.portrait-splash-content{display:flex;flex-direction:column;align-items:center;margin-top:-24px}
+.portrait-splash-logo{width:500px;height:auto;display:flex;align-items:center;justify-content:center}
+.portrait-splash-logo svg{display:block;max-width:100%;max-height:100%}
+.portrait-splash-brand{margin-top:32px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.portrait-splash-brand span{font-size:18px;font-weight:800;letter-spacing:.23em;color:#60758a}
+.portrait-splash-segments{width:390px;height:28px;margin-top:70px;display:grid;grid-template-columns:repeat(10,1fr);align-items:center;gap:9px;transform:skewX(-18deg)}
+.portrait-splash-segments i{display:block;width:100%;height:16px;border-radius:3px;background:#09377c;opacity:.24;animation:portrait-splash-segment 1.35s ease-in-out infinite}
+.portrait-splash-segments i:nth-child(n+6){background:#6d28d9}
+.portrait-splash-label{margin-top:22px;font-size:14px;font-weight:800;letter-spacing:.24em;color:#60758a}
+@keyframes portrait-splash-segment{0%,100%{opacity:.2;transform:translateY(0)}45%{opacity:1;transform:translateY(-3px)}}
+@media (prefers-reduced-motion:reduce){.portrait-splash-segments i{animation:none;opacity:.72}}

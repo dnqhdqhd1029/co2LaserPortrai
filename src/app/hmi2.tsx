@@ -1065,12 +1065,12 @@ export function HTopBar({
 
 // ── Splash screen ─────────────────────────────────────────────────────────────
 // Q-TECH logo — blue paths → H.blue (#1e7ef5), green paths → H.cyan (#00cae4)
-function HQTechLogo({width = 260}: { width?: number }) {
+export function HQTechLogo({width = 260, blueColor, greenColor}: { width?: number; blueColor?: string; greenColor?: string }) {
     const vw = 541.617,
         vh = 458.438;
     const h = width * (vh / vw);
-    const blue = H.blue; // Q circle, Q-tail, "Q" letter, dash
-    const green = H.cyan; // arrow, swoop, T E C H
+    const blue = blueColor ?? H.blue; // Q circle, Q-tail, "Q" letter, dash
+    const green = greenColor ?? H.cyan; // arrow, swoop, T E C H
     return (
         <svg
             width={width}
