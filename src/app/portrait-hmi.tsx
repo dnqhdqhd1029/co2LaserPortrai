@@ -6,7 +6,7 @@ import "../styles/portrait-home-variants.css";
 
 type CosParamKey = "power" | "duration" | "interval" | "onTime" | "offTime";
 type FrxParamKey = "intensity" | "degree" | "density" | "pause";
-type PortraitScreen = "home" | "cos" | "frx";
+type PortraitScreen = "splash" | "cos";
 
 const COS = "#09377C";
 
@@ -72,7 +72,7 @@ export function PortraitHomeDesign({ variant, onCOS, onFRX }: { variant: Portrai
   </main>;
 }
 
-function PortraitSplash({ onDone }: { onDone: () => void }) {
+export function PortraitSplash({ onDone }: { onDone: () => void }) {
   useEffect(() => {
     const timer = window.setTimeout(onDone, 3000);
     return () => window.clearTimeout(timer);
@@ -80,9 +80,11 @@ function PortraitSplash({ onDone }: { onDone: () => void }) {
   return <main className="portrait-screen portrait-splash-screen" data-portrait-screen="splash">
     <div className="portrait-splash-orbit portrait-splash-orbit--navy"/>
     <div className="portrait-splash-orbit portrait-splash-orbit--violet"/>
+    <div className="portrait-splash-orbit portrait-splash-orbit--navy-small"/>
+    <div className="portrait-splash-orbit portrait-splash-orbit--green-small"/>
     <section className="portrait-splash-content">
       <div className="portrait-splash-logo">
-        <HQTechLogo width={500} blueColor="#09377C" greenColor="#6D28D9"/>
+        <HQTechLogo width={380} blueColor="#09377C" greenColor="#00A86B"/>
       </div>
       <div className="portrait-splash-brand"><span>CO₂ LASER SYSTEM</span></div>
       <div className="portrait-splash-segments" aria-hidden="true">
@@ -141,7 +143,7 @@ function FrxScanIcon({ mode }: { mode: HMIState2["frxScanMode"] }) {
   return <svg className="portrait-frx-scan-icon" viewBox="0 0 32 22" fill="currentColor" aria-hidden="true">{[[4,4],[15,7],[26,3],[9,17],[23,18],[3,13],[29,12],[14,13],[21,10]].map(([x,y], i) => <circle key={i} cx={x} cy={y} r="2.2"/>)}</svg>;
 }
 
-export function PortraitCOSControl({ state, update, onBack }: { state: HMIState2; update: (patch: Partial<HMIState2>) => void; onBack: () => void }) {
+export function PortraitCOSControl({ state, update, onBack }: { state: HMIState2; update: (patch: Partial<HMIState2>) => void; onBack?: () => void }) {
   const [activeParam, setActiveParam] = useState<CosParamKey>("power");
   const [aimOpen, setAimOpen] = useState(false);
   const aimRef = useRef<HTMLDivElement>(null);
@@ -178,7 +180,7 @@ export function PortraitCOSControl({ state, update, onBack }: { state: HMIState2
 
   return <main className="portrait-screen portrait-cos-screen" data-portrait-screen="cos-control">
     <header className="portrait-control-header">
-      <button className="portrait-back" onClick={onBack} aria-label="Back" title="Back"><Icon name="back"/><span>Back</span></button>
+      {onBack && <button className="portrait-back" onClick={onBack} aria-label="Back" title="Back"><Icon name="back"/><span>Back</span></button>}
       <div className="portrait-header-mode-badge" aria-label="COS mode">COS</div>
       <div className="portrait-header-actions">
         <button className="portrait-status-button" data-active={state.soundOn} onClick={() => update({ soundOn: !state.soundOn })} aria-label="Sound" title="Sound"><Icon name="sound"/><span>Sound</span></button>
@@ -316,16 +318,10 @@ export function PortraitHMIRoot({ onStateChange }: { onStateChange?: (s: HMIStat
   const update = (patch: Partial<HMIState2>) => setState(previous => ({ ...previous, ...patch }));
   useEffect(() => onStateChange?.(state), [state, onStateChange]);
   const openCOS = () => { update({ screen: "cos", laserState: "standby" }); setScreen("cos"); };
-  const openFRX = () => { update({ screen: "frx", laserState: "standby" }); setScreen("frx"); };
-  const goHome = () => { update({ screen: "home", laserState: "standby" }); setScreen("home"); };
   return <div className="portrait-hmi-root hmi-root" data-screen-frame="true">
     {screen === "splash"
-      ? <PortraitSplash onDone={goHome}/>
-      : screen === "home"
-      ? <PortraitModeSelection onCOS={openCOS} onFRX={openFRX}/>
-      : screen === "cos"
-        ? <PortraitCOSControl state={state} update={update} onBack={goHome}/>
-        : <PortraitFRXControl state={state} update={update} onBack={goHome}/>
+      ? <PortraitSplash onDone={openCOS}/>
+      : <PortraitCOSControl state={state} update={update}/>
     }
   </div>;
 }

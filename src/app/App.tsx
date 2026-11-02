@@ -1,8 +1,7 @@
 import React, { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { HMIState2, HMI2_DEFAULT } from "./hmi2";
-import { PortraitHMIRoot, PortraitHomeDesign, PortraitHomeVariant } from "./portrait-hmi";
-import { PortraitHomeComparison } from "./portrait-home-comparison";
+import { PortraitHMIRoot } from "./portrait-hmi";
 import {
   SectionId,
   SECTIONS,
@@ -73,11 +72,6 @@ export default function App() {
 
   // Clean 768×1024 mount for DWIN preview capture and future portrait exports.
   const query = new URLSearchParams(window.location.search);
-  const homeVariant = query.get("homeVariant")?.toUpperCase();
-  if (homeVariant === "A" || homeVariant === "B" || homeVariant === "C" || homeVariant === "D") {
-    return <PortraitHomeDesign variant={homeVariant as PortraitHomeVariant} onCOS={() => undefined} onFRX={() => undefined} />;
-  }
-  if (query.has("homeCompare")) return <PortraitHomeComparison />;
 
   if (query.has("portraitExport")) {
     return <PortraitHMIRoot onStateChange={handleStateChange} />;
@@ -93,7 +87,6 @@ export default function App() {
     if (section === "06") return <CurrentUserFlowPage />;
     if (section === "07") return <ScreensPage liveState={liveState} />;
     if (section === "08") return <CurrentAssetsPage />;
-    if (section === "09") return <PortraitHomeComparison />;
     return null;
   };
 

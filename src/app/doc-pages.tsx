@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ScreensExportPage } from "./screens-export";
+import { PortraitScreenStatesPage } from "./portrait-screen-states";
 import { HMIState2, HMI2_DEFAULT } from "./hmi2";
 import {
   C,
@@ -31,8 +31,7 @@ export type SectionId =
   | "05"
   | "06"
   | "07"
-  | "08"
-  | "09";
+  | "08";
 
 export const SECTIONS: {
   id: SectionId;
@@ -225,26 +224,6 @@ export const SECTIONS: {
         strokeLinejoin="round"
       >
         <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-      </svg>
-    ),
-  },
-  {
-    id: "09",
-    num: "09",
-    label: "Home Designs",
-    icon: (
-      <svg
-        width={16}
-        height={16}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={1.8}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <polyline points="16 18 22 12 16 6" />
-        <polyline points="8 6 2 12 8 18" />
       </svg>
     ),
   },
@@ -3218,7 +3197,7 @@ export function UserFlowPage() {
 
 // 07 Screens — empty folder structure
 export function ScreensPage({ liveState = HMI2_DEFAULT }: { liveState?: HMIState2 }) {
-  return <ScreensExportPage liveState={liveState} />;
+  return <PortraitScreenStatesPage liveState={liveState} />;
 }
 
 // 08 Assets
