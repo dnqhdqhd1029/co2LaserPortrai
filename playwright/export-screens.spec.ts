@@ -12,7 +12,7 @@ function safeFilename(value: string) {
     .replace(/[<>:"/\\|?*]/g, "-");
 }
 
-test("export every HMI screen state as a 1024x768 PNG", async ({ page }) => {
+test("export every portrait HMI screen state as a 768x1024 PNG", async ({ page }) => {
   test.setTimeout(300_000);
   await mkdir(EXPORT_DIR, { recursive: true });
   if (!TARGET_FRAME_ID) {
@@ -52,8 +52,8 @@ test("export every HMI screen state as a 1024x768 PNG", async ({ page }) => {
 
     const screenFrame = page.locator('[data-screen-frame="true"]');
     await expect(screenFrame).toHaveCount(1);
-    await expect(screenFrame).toHaveCSS("width", "1024px");
-    await expect(screenFrame).toHaveCSS("height", "768px");
+    await expect(screenFrame).toHaveCSS("width", "768px");
+    await expect(screenFrame).toHaveCSS("height", "1024px");
     await page.evaluate(async () => {
       await document.fonts.ready;
       await new Promise<void>((resolve) =>

@@ -1,10 +1,11 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import { Volume2, VolumeX } from "lucide-react";
 import { HMI2_DEFAULT, HMIState2, HPRESETS, HQTechLogo, LaserState2 } from "./hmi2";
 import "../styles/portrait-hmi.css";
 import "../styles/portrait-hmi-bold.css";
 import "../styles/portrait-home-variants.css";
 
-type CosParamKey = "power" | "duration" | "interval" | "onTime" | "offTime";
+export type CosParamKey = "power" | "duration" | "interval" | "onTime" | "offTime";
 type FrxParamKey = "intensity" | "degree" | "density" | "pause";
 type PortraitScreen = "splash" | "cos";
 
@@ -14,10 +15,11 @@ function clampStep(cur: number, delta: number, min: number, max: number, step: n
   return Math.max(min, Math.min(max, Number((Math.round((cur + delta) / step) * step).toFixed(10))));
 }
 
-function Icon({ name }: { name: "back" | "sound" | "target" | "folder" | "save" | "camera" | "chevron" }) {
+function Icon({ name }: { name: "back" | "sound" | "soundOff" | "target" | "folder" | "save" | "camera" | "chevron" }) {
+  if (name === "sound") return <Volume2 className="portrait-icon" aria-hidden="true"/>;
+  if (name === "soundOff") return <VolumeX className="portrait-icon" aria-hidden="true"/>;
   const paths = {
     back: <><path d="M15 18l-6-6 6-6"/><path d="M9 12h10"/></>,
-    sound: <><path d="M11 5L6 9H3v6h3l5 4V5z"/><path d="M15 9a4 4 0 010 6"/><path d="M18 6a8 8 0 010 12"/></>,
     target: <><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></>,
     folder: <><path d="M3 7h7l2 2h9v9H3z"/><path d="M3 7V5h7l2 2"/></>,
     save: <><path d="M5 3h12l2 2v16H5z"/><path d="M8 3v6h8V3M8 21v-7h8v7"/></>,
@@ -143,7 +145,7 @@ function FrxScanIcon({ mode }: { mode: HMIState2["frxScanMode"] }) {
   return <svg className="portrait-frx-scan-icon" viewBox="0 0 32 22" fill="currentColor" aria-hidden="true">{[[4,4],[15,7],[26,3],[9,17],[23,18],[3,13],[29,12],[14,13],[21,10]].map(([x,y], i) => <circle key={i} cx={x} cy={y} r="2.2"/>)}</svg>;
 }
 
-export function PortraitCOSControl({ state, update, onBack }: { state: HMIState2; update: (patch: Partial<HMIState2>) => void; onBack?: () => void }) {
+export function PortraitCOSControl({ state, update, onBack, forcedActiveParam }: { state: HMIState2; update: (patch: Partial<HMIState2>) => void; onBack?: () => void; forcedActiveParam?: CosParamKey }) {
   const [activeParam, setActiveParam] = useState<CosParamKey>("power");
   const [aimOpen, setAimOpen] = useState(false);
   const aimRef = useRef<HTMLDivElement>(null);
@@ -159,7 +161,8 @@ export function PortraitCOSControl({ state, update, onBack }: { state: HMIState2
     onTime: { label: "On Time", value: state.co2OnTime.toFixed(1), unit: "s", min: .1, max: 10, step: .1, field: "co2OnTime" as const },
     offTime: { label: "Off Time", value: state.co2OffTime.toFixed(1), unit: "s", min: .1, max: 10, step: .1, field: "co2OffTime" as const },
   }), [state]);
-  const selected = params[activeParam];
+  const selectedParamKey = forcedActiveParam ?? activeParam;
+  const selected = params[selectedParamKey];
   useEffect(() => {
     if (!aimOpen) return;
     const closeOnOutsidePress = (event: PointerEvent) => {
@@ -183,7 +186,7 @@ export function PortraitCOSControl({ state, update, onBack }: { state: HMIState2
       {onBack && <button className="portrait-back" onClick={onBack} aria-label="Back" title="Back"><Icon name="back"/><span>Back</span></button>}
       <div className="portrait-header-mode-badge" aria-label="COS mode">COS</div>
       <div className="portrait-header-actions">
-        <button className="portrait-status-button" data-active={state.soundOn} onClick={() => update({ soundOn: !state.soundOn })} aria-label="Sound" title="Sound"><Icon name="sound"/><span>Sound</span></button>
+        <button className="portrait-status-button" data-active={state.soundOn} onClick={() => update({ soundOn: !state.soundOn })} aria-label={state.soundOn ? "Sound on" : "Sound off"} title={state.soundOn ? "Sound on" : "Sound off"}><Icon name={state.soundOn ? "sound" : "soundOff"}/><span>Sound</span></button>
         <div className="portrait-aim-wrap" ref={aimRef}>
           <button className="portrait-status-button portrait-status-button--aim" data-active={state.aimingLevel > 0} onClick={() => setAimOpen(v => !v)} aria-label={`Aiming ${state.aimingLevel || "OFF"}`} title="Aiming"><Icon name="target"/><span>{state.aimingLevel || "OFF"}</span><Icon name="chevron"/></button>
           {aimOpen && <div className="portrait-aim-popover">
@@ -207,7 +210,7 @@ export function PortraitCOSControl({ state, update, onBack }: { state: HMIState2
 
       <section className="portrait-parameter-panel">
         <div className="portrait-section-heading"><span/><div><strong>PARAMETERS</strong></div></div>
-        <div className="portrait-param-tabs">{(Object.keys(params) as CosParamKey[]).map(key => <button key={key} data-active={activeParam === key} onClick={() => setActiveParam(key)}><span>{params[key].label}</span><strong>{params[key].value}<small>{params[key].unit}</small></strong></button>)}</div>
+        <div className="portrait-param-tabs">{(Object.keys(params) as CosParamKey[]).map(key => <button key={key} data-active={selectedParamKey === key} onClick={() => setActiveParam(key)}><span>{params[key].label}</span><strong>{params[key].value}<small>{params[key].unit}</small></strong></button>)}</div>
         <div className="portrait-adjuster">
           <button className="portrait-round-control" disabled={locked} onClick={() => adjust(-1)}>−</button>
           <ParameterValueCircle value={selected.value} unit={selected.unit} label={selected.label}/>

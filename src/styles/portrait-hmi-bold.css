@@ -1236,6 +1236,39 @@
     margin: 0
 }
 
+/* Utility buttons aligned with the COS badge proportions */
+.portrait-control-header .portrait-header-actions .portrait-top-action,
+.portrait-control-header .portrait-header-actions .portrait-status-button {
+    width: auto;
+    min-width: 76px;
+    height: 44px;
+    padding: 0 18px;
+    border-radius: 22px;
+    gap: 6px
+}
+
+.portrait-control-header .portrait-status-button--aim span {
+    display: flex;
+    min-width: 16px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: 850;
+    line-height: 24px;
+    color: #10243e
+}
+
+.portrait-control-header .portrait-header-actions .portrait-status-button--aim {
+    gap: 1px
+}
+
+.portrait-control-header .portrait-status-button--aim .portrait-icon:last-child {
+    display: block;
+    width: 20px;
+    height: 20px
+}
+
 /* Clean Premium Medical UI depth system */
 .portrait-control-header {
     box-shadow: 0 2px 10px rgba(30, 55, 90, .035)
@@ -1338,6 +1371,15 @@
 
 .portrait-param-tabs button[data-active="true"] {
     border-color: #09377c
+}
+
+.portrait-segment button[data-active="true"],
+.portrait-param-tabs button[data-active="true"] {
+    background: linear-gradient(180deg, #0b3f82 0%, #09377c 52%, #072d66 100%);
+    box-shadow:
+        inset 0 5px 11px rgba(0, 18, 48, .30),
+        inset 0 -1px 0 rgba(255, 255, 255, .12),
+        0 2px 5px rgba(9, 55, 124, .10)
 }
 
 .portrait-laser-button[data-state="standby"] {
