@@ -1065,12 +1065,13 @@ export function HTopBar({
 
 // ── Splash screen ─────────────────────────────────────────────────────────────
 // Q-TECH logo — blue paths → H.blue (#1e7ef5), green paths → H.cyan (#00cae4)
-export function HQTechLogo({width = 260, blueColor, greenColor}: { width?: number; blueColor?: string; greenColor?: string }) {
+export function HQTechLogo({width = 260, blueColor, greenColor, premium = false}: { width?: number; blueColor?: string; greenColor?: string; premium?: boolean }) {
     const vw = 541.617,
         vh = 458.438;
     const h = width * (vh / vw);
-    const blue = blueColor ?? H.blue; // Q circle, Q-tail, "Q" letter, dash
-    const green = greenColor ?? H.cyan; // arrow, swoop, T E C H
+    const blue = premium ? "url(#qtech-silver-chrome)" : (blueColor ?? H.blue); // Q circle, Q-tail, "Q" letter, dash
+    const green = premium ? "url(#qtech-ice-blue)" : (greenColor ?? H.cyan); // T E C H
+    const electric = premium ? "url(#qtech-electric-blue)" : (greenColor ?? H.cyan); // arrow, blue accent, spark
     return (
         <svg
             width={width}
@@ -1080,6 +1081,28 @@ export function HQTechLogo({width = 260, blueColor, greenColor}: { width?: numbe
             xmlns="http://www.w3.org/2000/svg"
             style={{overflow: "visible"}}
         >
+            {premium && <defs>
+                <linearGradient id="qtech-silver-chrome" x1="0" y1="0" x2="0.82" y2="1">
+                    <stop offset="0" stopColor="#FFFFFF"/>
+                    <stop offset="0.18" stopColor="#D9E3ED"/>
+                    <stop offset="0.42" stopColor="#8FA2B5"/>
+                    <stop offset="0.64" stopColor="#F4F8FC"/>
+                    <stop offset="0.82" stopColor="#A8B8C8"/>
+                    <stop offset="1" stopColor="#6F8295"/>
+                </linearGradient>
+                <linearGradient id="qtech-ice-blue" x1="0" y1="0" x2="0.9" y2="1">
+                    <stop offset="0" stopColor="#DDF5FF"/>
+                    <stop offset="0.26" stopColor="#48B8FF"/>
+                    <stop offset="0.72" stopColor="#168BFF"/>
+                    <stop offset="1" stopColor="#62C6FF"/>
+                </linearGradient>
+                <linearGradient id="qtech-electric-blue" x1="0" y1="0" x2="0.92" y2="1">
+                    <stop offset="0" stopColor="#BEEBFF"/>
+                    <stop offset="0.28" stopColor="#48B8FF"/>
+                    <stop offset="0.58" stopColor="#168BFF"/>
+                    <stop offset="1" stopColor="#005FD1"/>
+                </linearGradient>
+            </defs>}
             {/* Q circle */}
             <path
                 fill={blue}
@@ -1087,12 +1110,12 @@ export function HQTechLogo({width = 260, blueColor, greenColor}: { width?: numbe
             />
             {/* Arrow (green) */}
             <path
-                fill={green}
+                fill={electric}
                 d="M389.998 181.103L409.449 189.604C382.831 220.942 354.151 245.024 326.003 263.548C331.706 268.039 337.444 273.14 343.18 278.927C403.803 247.671 441.908 212.016 441.908 212.016L458.136 225.154L493.688 136.279L389.998 181.103Z"
             />
             {/* Swoop green */}
             <path
-                fill={green}
+                fill={electric}
                 d="M280.943 289.111C212.618 322.136 156.938 324.849 156.938 324.849C206.029 326.523 252.014 316.344 292.132 301.501C291.318 300.548 290.517 299.572 289.728 298.573C289.728 298.573 286.626 294.749 280.943 289.111Z"
             />
             {/* Q-tail swoosh (blue) */}
@@ -1132,7 +1155,7 @@ export function HQTechLogo({width = 260, blueColor, greenColor}: { width?: numbe
             />
             {/* Spark mark */}
             <path
-                fill={green}
+                fill={electric}
                 transform="scale(0.62164)"
                 d="M883.176 109.702L892.682 73.752L899.552 110.296L931.693 91.5972L910.71 122.297L946.66 131.8L910.116 138.67L928.814 170.813L898.115 149.83L888.611 185.78L881.741 149.236L808.366 209.167L870.582 137.235L834.634 127.729L871.178 120.859L852.477 88.7188L883.176 109.702Z"
             />

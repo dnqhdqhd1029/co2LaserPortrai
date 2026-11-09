@@ -1,0 +1,1692 @@
+/* Q-TECH CO2 Laser — Premium Medical Precision × Automotive Digital Cockpit */
+.portrait-hmi-root {
+  --portrait-bg: #080d17;
+  --portrait-surface: #101a29;
+  --portrait-inactive: #1d2b3e;
+  --portrait-text: #f5f8ff;
+  --portrait-muted: #a8bad0;
+  --portrait-border: #415671;
+  --portrait-cos: #168bff;
+  --portrait-frx: #9060ff;
+  --portrait-shadow-selected: 0 0 0 1px rgba(90, 171, 255, .24), 0 8px 24px rgba(22, 139, 255, .22);
+  --portrait-shadow-card: inset 0 1px 0 rgba(255,255,255,.035), 0 12px 28px rgba(0,0,0,.24);
+  --portrait-shadow-value: inset 0 8px 18px rgba(0,30,70,.34), 0 12px 30px rgba(22,139,255,.26);
+  color: var(--portrait-text);
+  background: var(--portrait-bg)
+}
+
+.portrait-hmi-root .portrait-screen,
+.portrait-hmi-root .portrait-cos-screen,
+.portrait-hmi-root .portrait-frx-screen {
+  background: #080d17;
+  color: #f5f8ff
+}
+
+/* Header */
+.portrait-hmi-root .portrait-control-header {
+  background: linear-gradient(180deg, #111c2b 0%, #0c1421 100%);
+  border-bottom: 1px solid #2a3b52;
+  box-shadow: 0 7px 20px rgba(0,0,0,.24)
+}
+
+.portrait-hmi-root .portrait-header-mode-badge {
+  background: linear-gradient(180deg, #2294ff 0%, #0a67c8 100%);
+  color: #fff;
+  border: 1px solid rgba(154,210,255,.48);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.22), 0 0 18px rgba(22,139,255,.26)
+}
+
+.portrait-hmi-root .portrait-header-actions .portrait-top-action,
+.portrait-hmi-root .portrait-header-actions .portrait-status-button {
+  background: linear-gradient(180deg, #25364c 0%, #192638 100%);
+  border: 1px solid #415671;
+  color: #c9d5e5;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.07), 0 4px 10px rgba(0,0,0,.18)
+}
+
+.portrait-hmi-root .portrait-header-actions .portrait-top-action .portrait-icon,
+.portrait-hmi-root .portrait-header-actions .portrait-status-button .portrait-icon {
+  color: #c9d5e5 !important;
+  stroke: currentColor
+}
+
+.portrait-hmi-root .portrait-header-actions .portrait-top-action[data-active="true"],
+.portrait-hmi-root .portrait-header-actions .portrait-status-button[data-active="true"] {
+  background: linear-gradient(180deg, #263d59 0%, #172b43 100%);
+  border-color: #168bff;
+  color: #55aaff;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 0 13px rgba(22,139,255,.18)
+}
+
+.portrait-hmi-root .portrait-header-actions .portrait-top-action[data-active="true"] .portrait-icon,
+.portrait-hmi-root .portrait-header-actions .portrait-status-button[data-active="true"] .portrait-icon {
+  color: #55aaff !important
+}
+
+.portrait-hmi-root .portrait-status-button--aim span,
+.portrait-hmi-root .portrait-status-button--aim .portrait-icon:last-child {
+  color: #f5f8ff
+}
+
+/* Main panels */
+.portrait-hmi-root .portrait-control-body {
+  background:
+    radial-gradient(circle at 50% 18%, rgba(30,67,112,.12), transparent 42%),
+    #080d17
+}
+
+.portrait-hmi-root .portrait-mode-panel,
+.portrait-hmi-root .portrait-parameter-panel {
+  background: linear-gradient(180deg, #121e2f 0%, #0e1826 100%);
+  border: 1px solid #273a51;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.035), 0 10px 26px rgba(0,0,0,.24)
+}
+
+.portrait-hmi-root .portrait-section-heading strong {
+  color: #f5f8ff;
+  text-shadow: 0 1px 0 #000
+}
+
+.portrait-hmi-root .portrait-section-heading > span,
+.portrait-hmi-root .portrait-section-heading--compact > span {
+  background: linear-gradient(180deg, #53adff 0%, #168bff 100%);
+  box-shadow: 0 0 12px rgba(22,139,255,.38)
+}
+
+/* Mode segmented controls */
+.portrait-hmi-root .portrait-segment {
+  background: #0b1421;
+  border: 1px solid #334962;
+  box-shadow: inset 0 3px 10px rgba(0,0,0,.42)
+}
+
+.portrait-hmi-root .portrait-segment button {
+  background: transparent;
+  color: #a8bad0;
+  border-color: #334962
+}
+
+.portrait-hmi-root .portrait-mode-waveform {
+  color: #c9d5e5
+}
+
+.portrait-hmi-root .portrait-segment button[data-active="true"] {
+  background: linear-gradient(180deg, #168bff 0%, #0b69cc 100%);
+  color: #fff;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.24), inset 0 -5px 12px rgba(0,45,105,.28), 0 0 18px rgba(22,139,255,.20)
+}
+
+/* Parameter selector */
+.portrait-hmi-root .portrait-param-tabs button {
+  background: linear-gradient(180deg, #24344a 0%, #192638 100%);
+  border: 1px solid #415671;
+  color: #a8bad0;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.055)
+}
+
+.portrait-hmi-root .portrait-param-tabs button > strong {
+  color: #f5f8ff
+}
+
+.portrait-hmi-root .portrait-param-tabs button[data-active="true"] {
+  background: linear-gradient(180deg, #1a91ff 0%, #0a65c5 100%);
+  border-color: #67b5ff;
+  color: #fff;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.22), inset 0 -5px 11px rgba(0,43,100,.25), 0 0 16px rgba(22,139,255,.20)
+}
+
+.portrait-hmi-root .portrait-param-tabs button[data-active="true"] > strong {
+  color: #fff
+}
+
+/* Layered numeric adjuster */
+.portrait-hmi-root .portrait-adjuster > .portrait-value-circle {
+  background: linear-gradient(180deg, #168bff 0%, #075db7 100%);
+  border: 1px solid rgba(152,211,255,.42);
+  box-shadow: inset 0 8px 18px rgba(0,36,86,.34), inset 0 1px 0 rgba(255,255,255,.22), 0 13px 30px rgba(22,139,255,.26);
+  color: #fff
+}
+
+.portrait-hmi-root .portrait-value-circle__content,
+.portrait-hmi-root .portrait-value-circle__content strong,
+.portrait-hmi-root .portrait-value-circle__content small {
+  color: #fff
+}
+
+.portrait-hmi-root .portrait-adjuster > .portrait-round-control {
+  background: linear-gradient(180deg, #2a3b52 0%, #1b2a3d 100%);
+  border: 1px solid #4b6380;
+  color: #c9d5e5;
+  box-shadow: inset 0 5px 10px rgba(78,103,132,.12), inset 0 -5px 10px rgba(0,0,0,.18)
+}
+
+.portrait-hmi-root .portrait-adjuster > .portrait-round-control:active {
+  background: #162437;
+  color: #168bff;
+  box-shadow: inset 0 6px 13px rgba(0,0,0,.34)
+}
+
+.portrait-hmi-root .portrait-adjuster > .portrait-round-control:disabled {
+  background: #152130;
+  border-color: #29394d;
+  color: #5e7087
+}
+
+/* Footer state control */
+.portrait-hmi-root .portrait-laser-footer {
+  background: #080d17;
+  border-top: 0
+}
+
+.portrait-hmi-root .portrait-laser-button {
+  background: linear-gradient(180deg, #183a35 0%, #102a27 100%);
+  border: 2px solid #22d98a;
+  color: #d9fff0;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 0 18px rgba(34,217,138,.12)
+}
+
+.portrait-hmi-root .portrait-laser-button[data-state="standby"] {
+  background: linear-gradient(180deg, #163e35 0%, #102c27 100%);
+  border-color: #22d98a;
+  color: #dffff1
+}
+
+.portrait-hmi-root .portrait-laser-button[data-state="ready"] {
+  background: linear-gradient(180deg, #493914 0%, #30250d 100%);
+  border-color: #ffb020;
+  color: #ffe5a8
+}
+
+.portrait-hmi-root .portrait-laser-button[data-state="lasering"] {
+  background: linear-gradient(180deg, #4a1e25 0%, #301318 100%);
+  border-color: #ff4d62;
+  color: #ffd8dd
+}
+
+.portrait-hmi-root .portrait-laser-button[data-state="paused"] {
+  background: linear-gradient(180deg, #173d64 0%, #102943 100%);
+  border-color: #4da5ff;
+  color: #d8ecff
+}
+
+/* Popover and modal surfaces */
+.portrait-hmi-root .portrait-aim-popover,
+.portrait-hmi-root .portrait-modal {
+  background: #101a29;
+  border-color: #415671;
+  color: #f5f8ff;
+  box-shadow: 0 18px 42px rgba(0,0,0,.48)
+}
+
+.portrait-hmi-root .portrait-aim-bars button,
+.portrait-hmi-root .portrait-aim-off {
+  background: #1d2b3e;
+  color: #c9d5e5
+}
+
+/* FRX uses the same system with a violet accent. */
+.portrait-hmi-root .portrait-frx-screen {
+  --portrait-cos: #9060ff
+}
+
+.portrait-hmi-root .portrait-frx-screen .portrait-header-mode-badge,
+.portrait-hmi-root .portrait-frx-screen .portrait-param-tabs button[data-active="true"],
+.portrait-hmi-root .portrait-frx-screen .portrait-segment button[data-active="true"],
+.portrait-hmi-root .portrait-frx-screen .portrait-adjuster > .portrait-value-circle {
+  background: linear-gradient(180deg, #9c70ff 0%, #6332d1 100%);
+  border-color: #b79aff;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.22), inset 0 -6px 13px rgba(44,10,110,.28), 0 0 18px rgba(144,96,255,.22)
+}
+
+.portrait-hmi-root .portrait-frx-screen .portrait-section-heading > span,
+.portrait-hmi-root .portrait-frx-screen .portrait-section-heading--compact > span {
+  background: linear-gradient(180deg, #b18fff 0%, #9060ff 100%);
+  box-shadow: 0 0 12px rgba(144,96,255,.35)
+}
+
+.portrait-hmi-root .portrait-frx-screen .portrait-adjuster > .portrait-round-control {
+  color: #b99cff
+}
+
+/* Dark boot treatment without changing splash content or timing. */
+.portrait-hmi-root .portrait-splash-screen {
+  background: radial-gradient(circle at 50% 42%, #14243a 0%, #0b1421 48%, #080d17 100%)
+}
+
+.portrait-hmi-root .portrait-splash-screen:before {
+  background: radial-gradient(ellipse at 50% 110%, rgba(22,139,255,.14), transparent 62%)
+}
+
+.portrait-hmi-root .portrait-splash-brand span,
+.portrait-hmi-root .portrait-splash-label {
+  color: #a8bad0
+}
+
+/* COS Control — final premium dark medical cockpit direction */
+.portrait-hmi-root .portrait-cos-screen {
+  --portrait-bg: #080d17;
+  --portrait-surface: #101a29;
+  --portrait-inactive: #1d2b3e;
+  --portrait-highlight: #2a3b52;
+  --portrait-border: #415671;
+  --portrait-text: #f5f8ff;
+  --portrait-muted: #a8bad0;
+  --portrait-cos: #168bff;
+  --portrait-metal: #c9d5e5;
+  background:
+    radial-gradient(ellipse at 50% 12%, rgba(35, 91, 150, .16) 0%, rgba(8, 13, 23, 0) 38%),
+    linear-gradient(180deg, #09101b 0%, #080d17 46%, #060a12 100%);
+  color: var(--portrait-text);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header {
+  height: 76px;
+  padding: 0 18px;
+  gap: 12px;
+  background:
+    linear-gradient(180deg, rgba(20, 32, 49, .96) 0%, rgba(8, 13, 23, .98) 100%);
+  border-bottom: 1px solid rgba(65, 86, 113, .58);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.045),
+    0 8px 22px rgba(0,0,0,.32);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-header-mode-badge {
+  height: 44px;
+  min-width: 82px;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(102, 190, 255, .32), transparent 58%),
+    linear-gradient(180deg, #0d65c9 0%, #092e78 100%);
+  border: 1px solid rgba(87, 181, 255, .74);
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 850;
+  letter-spacing: .065em;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.24),
+    inset 0 -7px 14px rgba(0,31,86,.32),
+    0 0 20px rgba(22,139,255,.34);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-back,
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-top-action,
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-status-button {
+  height: 44px;
+  min-width: 70px;
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, #182438 0%, #101827 100%);
+  border: 1px solid rgba(65, 86, 113, .78);
+  color: #d7e4f4;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.075),
+    inset 0 -4px 10px rgba(0,0,0,.22),
+    0 4px 12px rgba(0,0,0,.18);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-back {
+  min-width: 48px;
+  width: 48px;
+  padding: 0;
+  border-radius: 14px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-back span,
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-top-action span,
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-status-button:not(.portrait-status-button--aim) span {
+  display: none;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-icon {
+  color: currentColor !important;
+  width: 22px;
+  height: 22px;
+  stroke-width: 2.15;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-status-button--aim {
+  min-width: 92px;
+  gap: 4px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-status-button--aim span {
+  display: flex;
+  color: #f5f8ff;
+  font-size: 17px;
+  font-weight: 850;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-top-action[data-active="true"],
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-status-button[data-active="true"] {
+  border-color: rgba(22,139,255,.7);
+  color: #9bd0ff;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(22,139,255,.20), transparent 62%),
+    linear-gradient(180deg, #1d3048 0%, #111d2e 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.09),
+    0 0 14px rgba(22,139,255,.18);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-control-body {
+  padding: 22px 24px 0;
+  gap: 12px;
+  background:
+    radial-gradient(ellipse at 50% 2%, rgba(33, 100, 175, .10), transparent 38%),
+    linear-gradient(180deg, #080d17 0%, #070c15 100%);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-mode-panel,
+.portrait-hmi-root .portrait-cos-screen .portrait-parameter-panel {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0 18px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-mode-panel {
+  height: 302px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-parameter-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding-top: 0;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-section-heading,
+.portrait-hmi-root .portrait-cos-screen .portrait-section-heading--compact {
+  position: relative;
+  justify-content: center;
+  gap: 18px;
+  margin: 0 0 18px;
+  min-height: 28px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-section-heading--compact {
+  margin-top: 22px;
+  margin-bottom: 16px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-section-heading > span,
+.portrait-hmi-root .portrait-cos-screen .portrait-section-heading--compact > span {
+  display: none;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-section-heading:before,
+.portrait-hmi-root .portrait-cos-screen .portrait-section-heading:after {
+  content: "";
+  width: 190px;
+  height: 2px;
+  display: block;
+  flex: 0 1 190px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-section-heading:before {
+  background:
+    linear-gradient(90deg, transparent 0%, rgba(37, 88, 145, .36) 45%, rgba(145, 207, 255, .98) 100%);
+  box-shadow: 22px 0 12px rgba(22,139,255,.34);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-section-heading:after {
+  background:
+    linear-gradient(90deg, rgba(145, 207, 255, .98) 0%, rgba(37, 88, 145, .36) 55%, transparent 100%);
+  box-shadow: -22px 0 12px rgba(22,139,255,.34);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-section-heading div {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-section-heading strong {
+  display: block;
+  color: #f5f8ff;
+  font-size: 20px;
+  font-weight: 850;
+  letter-spacing: .055em;
+  line-height: 1;
+  text-align: center;
+  text-shadow:
+    0 1px 0 #000,
+    0 0 10px rgba(200, 226, 255, .14);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-segment {
+  gap: 0;
+  overflow: hidden;
+  border-radius: 48px;
+  background:
+    linear-gradient(180deg, #172436 0%, #101a29 100%);
+  border: 1px solid rgba(83, 110, 142, .86);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.06),
+    inset 0 -8px 18px rgba(0,0,0,.22),
+    0 9px 22px rgba(0,0,0,.24);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-segment button {
+  height: 86px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #d8e6f5;
+  font-size: 21px;
+  font-weight: 800;
+  gap: 8px;
+  text-shadow: 0 1px 0 rgba(0,0,0,.5);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-segment button + button {
+  border-left: 1px solid rgba(92, 116, 145, .62);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-mode-waveform {
+  width: 70px;
+  height: 25px;
+  color: #d8e6f5;
+  filter: drop-shadow(0 1px 0 rgba(0,0,0,.45));
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-segment button[data-active="true"] {
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(105, 196, 255, .32), transparent 58%),
+    linear-gradient(180deg, #1596ff 0%, #095ec0 58%, #074699 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.26),
+    inset 0 -9px 16px rgba(0,32,93,.34),
+    0 0 18px rgba(22,139,255,.34);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-segment button[data-active="true"] .portrait-mode-waveform {
+  color: #ffffff;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-param-tabs {
+  gap: 10px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-param-tabs button {
+  height: 86px;
+  border-radius: 43px;
+  border: 1px solid rgba(83, 110, 142, .86);
+  background:
+    linear-gradient(180deg, #223248 0%, #172437 100%);
+  color: #b7c8dc;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.065),
+    inset 0 -7px 14px rgba(0,0,0,.18),
+    0 5px 14px rgba(0,0,0,.16);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-param-tabs button > span {
+  color: inherit;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-param-tabs button > strong {
+  color: #f5f8ff;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 27px;
+  line-height: 1;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-param-tabs button small {
+  color: inherit;
+  font-size: 13px;
+  margin-left: 4px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-param-tabs button[data-active="true"] {
+  border-color: rgba(111, 190, 255, .95);
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(120, 205, 255, .34), transparent 58%),
+    linear-gradient(180deg, #1a95ff 0%, #0965c9 60%, #074da4 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.24),
+    inset 0 -8px 14px rgba(0,38,100,.32),
+    0 0 18px rgba(22,139,255,.36);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-param-tabs button[data-active="true"] > strong {
+  color: #ffffff;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster {
+  position: relative;
+  flex: 1;
+  min-height: 252px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding-top: 6px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 200px;
+  width: 200px;
+  height: 106px;
+  border-radius: 53px;
+  border: 1px solid rgba(77, 102, 132, .92);
+  background:
+    linear-gradient(180deg, #243650 0%, #142238 100%);
+  color: #eef5ff;
+  font-size: 58px;
+  font-weight: 850;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    inset 0 -9px 18px rgba(0,0,0,.28),
+    0 10px 24px rgba(0,0,0,.28);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control:first-child {
+  margin-right: -54px;
+  padding-right: 56px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control:last-child {
+  margin-left: -54px;
+  padding-left: 56px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control:active {
+  transform: translateY(2px) scale(.99);
+  background:
+    linear-gradient(180deg, #1a2a41 0%, #101b2d 100%);
+  color: #9bd0ff;
+  box-shadow:
+    inset 0 8px 18px rgba(0,0,0,.38),
+    0 5px 12px rgba(0,0,0,.22);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-value-circle {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 244px;
+  width: 244px;
+  height: 244px;
+  border-radius: 50%;
+  border: 0;
+  background:
+    radial-gradient(circle at 50% 50%, #08101b 0 54%, transparent 55%),
+    conic-gradient(from 224deg,
+      #111925 0deg,
+      #dce8f8 32deg,
+      #77879a 58deg,
+      #f8fbff 88deg,
+      #213145 128deg,
+      #168bff 164deg,
+      #f4f8ff 206deg,
+      #53677f 248deg,
+      #d6e3f3 300deg,
+      #111925 360deg);
+  box-shadow:
+    inset 0 0 0 11px rgba(5, 10, 18, .98),
+    inset 0 0 0 17px rgba(22,139,255,.52),
+    inset 0 0 0 22px rgba(6,13,24,.98),
+    0 0 22px rgba(22,139,255,.38),
+    0 18px 34px rgba(0,0,0,.48);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-value-circle:before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 34%, rgba(39, 68, 105, .40), transparent 48%),
+    linear-gradient(180deg, #101a29 0%, #070d17 100%);
+  box-shadow:
+    inset 0 8px 20px rgba(0,0,0,.54),
+    inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-value-circle:after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  border: 1px solid rgba(230, 240, 255, .42);
+  box-shadow:
+    inset 0 0 0 1px rgba(22,139,255,.40),
+    0 0 18px rgba(22,139,255,.30);
+  pointer-events: none;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__content {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__content span {
+  color: #d9e8fb;
+  font-size: 21px;
+  font-weight: 850;
+  letter-spacing: .095em;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__content strong {
+  margin-top: 12px;
+  color: #ffffff;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 84px;
+  font-weight: 850;
+  line-height: .9;
+  letter-spacing: -.075em;
+  text-shadow:
+    0 1px 0 rgba(255,255,255,.16),
+    0 0 14px rgba(255,255,255,.10);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__content small {
+  margin-top: 12px;
+  color: #eaf3ff;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Premium automotive chrome dial: COS numeric control only. */
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster {
+  position: relative;
+  isolation: isolate;
+  gap: 0;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control {
+  z-index: 1;
+  overflow: hidden;
+  border: 1px solid rgba(161, 184, 211, .78);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.26) 0, rgba(255,255,255,.08) 7%, transparent 29%),
+    radial-gradient(ellipse at 50% -12%, rgba(211, 229, 248, .30) 0, transparent 57%),
+    linear-gradient(180deg, #40536b 0%, #293b53 18%, #18263a 53%, #0a1220 100%);
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(255,255,255,.22), 0 0 10px rgba(92, 174, 255, .18);
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,.25),
+    inset 0 0 0 2px rgba(9, 18, 31, .76),
+    inset 0 -18px 28px rgba(0,0,0,.38),
+    0 0 0 1px rgba(3, 8, 15, .92),
+    0 12px 24px rgba(0,0,0,.48),
+    0 0 16px rgba(22,139,255,.17);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control:before {
+  top: 2px;
+  left: 24px;
+  right: 24px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(244,250,255,.78), rgba(143,197,255,.44), transparent);
+  box-shadow: 0 1px 5px rgba(111, 187, 255, .25);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-value-circle {
+  z-index: 4;
+  position: relative;
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 51%, rgba(2,5,10,.98) 51.5% 55.5%, transparent 56%),
+    radial-gradient(ellipse at 27% 10%, rgba(255,255,255,.98) 0 2%, rgba(239,247,255,.72) 4%, rgba(255,255,255,.12) 15%, transparent 27%),
+    radial-gradient(ellipse at 80% 19%, rgba(79,179,255,.94) 0 3%, rgba(23,134,255,.55) 10%, transparent 25%),
+    conic-gradient(from 222deg,
+      #090d13 0deg, #36424e 14deg, #aab6c2 27deg, #f8fbff 40deg,
+      #ffffff 52deg, #a6b1bd 68deg, #3b4652 91deg, #111820 117deg,
+      #237fd1 137deg, #7ec8ff 151deg, #eaf7ff 166deg, #7a8b99 190deg,
+      #202a34 226deg, #070b11 252deg, #123d68 274deg, #289cff 292deg,
+      #bce6ff 306deg, #f7fbff 322deg, #9ca8b3 339deg, #222c36 352deg, #090d13 360deg);
+  box-shadow:
+    inset 0 0 0 2px #05080d,
+    inset 0 0 0 6px rgba(239,247,255,.62),
+    inset 0 0 0 9px rgba(66,77,89,.95),
+    inset 0 0 0 13px rgba(245,249,253,.42),
+    inset 0 0 0 17px rgba(17,24,32,.96),
+    inset 0 0 0 21px rgba(88,174,255,.54),
+    inset 0 0 0 24px rgba(3,7,13,.98),
+    inset 11px 12px 18px rgba(255,255,255,.15),
+    inset -13px -18px 28px rgba(0,0,0,.60),
+    0 3px 0 rgba(255,255,255,.26),
+    0 20px 34px rgba(0,0,0,.66),
+    0 0 22px rgba(22,139,255,.30);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-value-circle:before {
+  inset: 30px;
+  background:
+    radial-gradient(ellipse at 50% 8%, rgba(35,76,122,.34), transparent 45%),
+    radial-gradient(circle at 76% 28%, rgba(18,87,154,.14), transparent 38%),
+    linear-gradient(180deg, #07111f 0%, #030913 48%, #01050b 100%);
+  box-shadow:
+    inset 0 14px 25px rgba(0,0,0,.78),
+    inset 0 0 22px rgba(26,123,220,.16),
+    inset 0 -1px 0 rgba(255,255,255,.07),
+    0 0 0 1px rgba(218,231,245,.15),
+    0 0 0 3px rgba(0,0,0,.78);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-value-circle:after {
+  inset: 24px;
+  border: 1px solid rgba(99, 188, 255, .58);
+  box-shadow: inset 0 0 13px rgba(22,139,255,.20), 0 0 7px rgba(22,139,255,.16);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__content {
+  gap: 11px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__content span {
+  margin: 0;
+  color: #eaf4ff;
+  text-shadow: 0 1px 8px rgba(84,166,255,.24);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__reading {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__reading strong,
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__reading small {
+  display: block;
+  margin: 0;
+  color: #fff;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__reading strong {
+  text-shadow: 0 1px 1px rgba(255,255,255,.18), 0 0 10px rgba(95,165,255,.08);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__reading small {
+  font-size: 24px;
+  font-weight: 650;
+  letter-spacing: .01em;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-laser-footer {
+  height: 128px;
+  padding: 18px 24px 24px;
+  background: #080d17;
+  border-top: 0;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-laser-button {
+  height: 88px;
+  border-radius: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px;
+  text-align: center;
+  background:
+    linear-gradient(180deg, #12382f 0%, #0c2622 100%);
+  border: 2px solid #22d98a;
+  color: #34f2a0;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    inset 0 -9px 18px rgba(0,0,0,.24),
+    0 0 20px rgba(34,217,138,.30);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-laser-button span {
+  font-size: 27px;
+  font-weight: 850;
+  letter-spacing: .045em;
+  line-height: 1;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-laser-button[data-state="standby"] {
+  background:
+    linear-gradient(180deg, #123b32 0%, #0b2722 100%);
+  border-color: #22d98a;
+  color: #34f2a0;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-laser-button[data-state="ready"] {
+  background:
+    linear-gradient(180deg, #463512 0%, #2c210b 100%);
+  border-color: #ffb020;
+  color: #ffe2a0;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 0 18px rgba(255,176,32,.24);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-laser-button[data-state="lasering"] {
+  background:
+    linear-gradient(180deg, #471c24 0%, #2b1117 100%);
+  border-color: #ff4d62;
+  color: #ffd3da;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 0 18px rgba(255,77,98,.24);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-laser-button[data-state="paused"] {
+  background:
+    linear-gradient(180deg, #16375b 0%, #0d233a 100%);
+  border-color: #4da5ff;
+  color: #d8ecff;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 0 18px rgba(77,165,255,.22);
+}
+
+/* COS refinement — customer sketch: separated capsules + premium metallic rotary dial */
+.portrait-hmi-root .portrait-cos-screen .portrait-section-heading:before,
+.portrait-hmi-root .portrait-cos-screen .portrait-section-heading:after {
+  width: 184px;
+  height: 10px;
+  flex: 0 1 184px;
+  border-radius: 999px;
+  box-shadow: none;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-section-heading:before {
+  background:
+    linear-gradient(180deg, rgba(168, 218, 255, .95), rgba(22, 139, 255, .74)) right center / 2px 8px no-repeat,
+    linear-gradient(90deg, transparent 0%, rgba(35, 91, 150, .20) 36%, rgba(74, 164, 255, .76) 78%, rgba(190, 228, 255, .98) 100%) center / 100% 2px no-repeat;
+  filter: drop-shadow(14px 0 7px rgba(22,139,255,.22));
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-section-heading:after {
+  background:
+    linear-gradient(180deg, rgba(168, 218, 255, .95), rgba(22, 139, 255, .74)) left center / 2px 8px no-repeat,
+    linear-gradient(90deg, rgba(190, 228, 255, .98) 0%, rgba(74, 164, 255, .76) 22%, rgba(35, 91, 150, .20) 64%, transparent 100%) center / 100% 2px no-repeat;
+  filter: drop-shadow(-14px 0 7px rgba(22,139,255,.22));
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster {
+  gap: 18px;
+  padding-top: 4px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control {
+  z-index: 1;
+  flex: 0 0 178px;
+  width: 178px;
+  height: 102px;
+  padding: 0;
+  margin: 0;
+  border-radius: 51px;
+  border: 1px solid rgba(111, 132, 156, .86);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.095) 0%, rgba(255,255,255,0) 28%),
+    radial-gradient(ellipse at 50% 0%, rgba(201,213,229,.13), transparent 58%),
+    linear-gradient(180deg, #26374e 0%, #172338 52%, #101a2b 100%);
+  color: #f3f8ff;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.14),
+    inset 0 -10px 18px rgba(0,0,0,.32),
+    inset 0 0 0 1px rgba(255,255,255,.025),
+    0 10px 22px rgba(0,0,0,.30);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control:first-child,
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control:last-child {
+  margin: 0;
+  padding: 0;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control:first-child {
+  border-top-right-radius: 42px;
+  border-bottom-right-radius: 42px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control:last-child {
+  border-top-left-radius: 42px;
+  border-bottom-left-radius: 42px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control:active {
+  transform: translateY(2px) scale(.985);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.055) 0%, rgba(255,255,255,0) 30%),
+    linear-gradient(180deg, #1d2c42 0%, #121d30 100%);
+  color: #9bd0ff;
+  box-shadow:
+    inset 0 9px 18px rgba(0,0,0,.42),
+    inset 0 0 0 1px rgba(255,255,255,.035),
+    0 5px 12px rgba(0,0,0,.24);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control:disabled {
+  background:
+    linear-gradient(180deg, #1a2636 0%, #121b29 100%);
+  border-color: rgba(57, 75, 96, .72);
+  color: #65798f;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.04),
+    inset 0 -8px 14px rgba(0,0,0,.24);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-value-circle {
+  z-index: 2;
+  flex: 0 0 252px;
+  width: 252px;
+  height: 252px;
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 55%, rgba(3, 7, 13, .96) 55.4% 58.2%, transparent 58.8%),
+    radial-gradient(circle at 32% 22%, rgba(255,255,255,.58) 0%, rgba(255,255,255,.18) 8%, transparent 22%),
+    conic-gradient(from 220deg,
+      #05080d 0deg,
+      #202936 18deg,
+      #f5f8ff 42deg,
+      #9aa8b8 66deg,
+      #2b3542 96deg,
+      #0b1018 126deg,
+      #687789 154deg,
+      #dce5ef 184deg,
+      #344252 214deg,
+      #090d14 246deg,
+      #5f6e7f 276deg,
+      #c8d3df 306deg,
+      #1b2430 336deg,
+      #05080d 360deg);
+  box-shadow:
+    inset 0 0 0 4px rgba(0,0,0,.92),
+    inset 0 0 0 12px rgba(215,226,240,.12),
+    inset 0 0 0 18px rgba(8,13,21,.96),
+    inset 0 0 0 20px rgba(22,139,255,.62),
+    inset 0 0 0 23px rgba(4,8,15,.98),
+    0 2px 0 rgba(255,255,255,.10),
+    0 18px 34px rgba(0,0,0,.54),
+    0 0 12px rgba(22,139,255,.16);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-value-circle:before {
+  inset: 24px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 28%, rgba(42, 63, 91, .42), transparent 46%),
+    radial-gradient(circle at 50% 68%, rgba(0,0,0,.34), transparent 54%),
+    linear-gradient(180deg, #101a29 0%, #070d17 100%);
+  box-shadow:
+    inset 0 13px 22px rgba(0,0,0,.62),
+    inset 0 -2px 0 rgba(255,255,255,.045),
+    inset 0 0 0 1px rgba(201,213,229,.10),
+    0 0 0 1px rgba(0,0,0,.72);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-value-circle:after {
+  inset: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(117, 190, 255, .72);
+  box-shadow:
+    inset 0 0 0 1px rgba(0,0,0,.62),
+    inset 0 0 18px rgba(22,139,255,.10),
+    0 0 8px rgba(22,139,255,.16);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__content span,
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__content strong,
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__content small {
+  text-shadow: none;
+}
+
+/* COS numeric control precision pass — brighter metal, inline unit, concave side controls */
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster {
+  gap: 14px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-value-circle {
+  flex: 0 0 256px;
+  width: 256px;
+  height: 256px;
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 51.5%, rgba(3, 6, 11, .98) 52% 55.8%, transparent 56.3%),
+    radial-gradient(circle at 31% 18%, rgba(255,255,255,.82) 0%, rgba(255,255,255,.42) 6.5%, rgba(255,255,255,.10) 16%, transparent 27%),
+    linear-gradient(145deg, rgba(255,255,255,.28) 0%, transparent 22%, transparent 70%, rgba(0,0,0,.42) 100%),
+    conic-gradient(from 224deg,
+      #05070b 0deg,
+      #222b36 14deg,
+      #aeb8c6 28deg,
+      #ffffff 44deg,
+      #d8e1eb 58deg,
+      #7b8795 76deg,
+      #2d3642 98deg,
+      #0a0e15 123deg,
+      #3f4b58 146deg,
+      #b9c4d0 169deg,
+      #f7fbff 191deg,
+      #8793a1 213deg,
+      #26303b 236deg,
+      #070b11 258deg,
+      #53606d 282deg,
+      #d6dee8 307deg,
+      #f3f6fa 326deg,
+      #586572 344deg,
+      #05070b 360deg);
+  box-shadow:
+    inset 0 0 0 3px rgba(0,0,0,.96),
+    inset 0 0 0 9px rgba(255,255,255,.18),
+    inset 0 0 0 15px rgba(82, 91, 104, .42),
+    inset 0 0 0 20px rgba(7, 11, 18, .98),
+    inset 0 0 0 22px rgba(22,139,255,.74),
+    inset 0 0 0 25px rgba(4,8,15,.98),
+    inset -12px -18px 26px rgba(0,0,0,.46),
+    inset 10px 12px 18px rgba(255,255,255,.14),
+    0 2px 0 rgba(255,255,255,.14),
+    0 20px 36px rgba(0,0,0,.56),
+    0 0 8px rgba(22,139,255,.10);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-value-circle:before {
+  inset: 30px;
+  background:
+    radial-gradient(circle at 50% 24%, rgba(52, 73, 104, .44), transparent 44%),
+    radial-gradient(circle at 50% 78%, rgba(0,0,0,.42), transparent 56%),
+    linear-gradient(180deg, #101a29 0%, #070d17 100%);
+  box-shadow:
+    inset 0 16px 24px rgba(0,0,0,.68),
+    inset 0 -2px 0 rgba(255,255,255,.045),
+    inset 0 0 0 1px rgba(201,213,229,.12),
+    0 0 0 1px rgba(0,0,0,.80),
+    0 -1px 0 rgba(255,255,255,.10);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-value-circle:after {
+  inset: 21px;
+  border: 1px solid rgba(95, 183, 255, .86);
+  box-shadow:
+    inset 0 0 0 1px rgba(0,0,0,.70),
+    inset 0 0 10px rgba(22,139,255,.10),
+    0 0 5px rgba(22,139,255,.14);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__content {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  align-items: end;
+  justify-content: center;
+  justify-items: center;
+  column-gap: 10px;
+  row-gap: 10px;
+  padding-top: 2px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__content span {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  align-self: end;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__content strong {
+  grid-column: 1;
+  grid-row: 2;
+  margin-top: 0;
+  align-self: end;
+  justify-self: end;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__content small {
+  grid-column: 2;
+  grid-row: 2;
+  margin-top: 0;
+  margin-bottom: 10px;
+  align-self: end;
+  justify-self: start;
+  font-family: Inter, "Noto Sans KR", system-ui, sans-serif;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control {
+  position: relative;
+  overflow: hidden;
+  flex: 0 0 182px;
+  width: 182px;
+  height: 102px;
+  border-color: rgba(136, 154, 176, .88);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.13) 0%, rgba(255,255,255,0) 30%),
+    radial-gradient(ellipse at 50% 0%, rgba(220,229,240,.16), transparent 58%),
+    linear-gradient(180deg, #293a52 0%, #172338 54%, #0f1929 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.16),
+    inset 0 -11px 18px rgba(0,0,0,.34),
+    inset 0 0 0 1px rgba(255,255,255,.03),
+    0 10px 22px rgba(0,0,0,.30);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control:before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 18px;
+  right: 18px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(230,239,250,.42), transparent);
+  pointer-events: none;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 116px;
+  height: 116px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, #080d17 0%, #070c15 64%, rgba(7,12,21,.96) 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(0,0,0,.92),
+    0 0 0 1px rgba(136,154,176,.38);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control:first-child {
+  border-top-right-radius: 38px;
+  border-bottom-right-radius: 38px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control:first-child:after {
+  right: -78px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control:last-child {
+  border-top-left-radius: 38px;
+  border-bottom-left-radius: 38px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control:last-child:after {
+  left: -78px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control:active {
+  transform: translateY(2px) scale(.985);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.07) 0%, rgba(255,255,255,0) 30%),
+    linear-gradient(180deg, #1d2c42 0%, #121d30 100%);
+  box-shadow:
+    inset 0 10px 20px rgba(0,0,0,.46),
+    inset 0 0 0 1px rgba(255,255,255,.035),
+    0 5px 12px rgba(0,0,0,.24);
+}
+
+/* COS final visual detailing — premium automotive light, chrome and glass depth */
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(94, 139, 188, .12), transparent 58%),
+    linear-gradient(180deg, #111b2a 0%, #0a111d 70%, #070c15 100%);
+  border-bottom: 1px solid rgba(147, 168, 192, .26);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.07),
+    inset 0 -1px 0 rgba(22,139,255,.08),
+    0 8px 22px rgba(0,0,0,.38);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-header-mode-badge {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.18) 0%, rgba(255,255,255,0) 24%),
+    radial-gradient(ellipse at 50% 0%, rgba(126, 211, 255, .50), transparent 62%),
+    linear-gradient(180deg, #168bff 0%, #0965cf 48%, #06327e 100%);
+  border-color: rgba(91, 190, 255, .96);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.34),
+    inset 0 -8px 14px rgba(0,34,96,.36),
+    0 0 0 1px rgba(22,139,255,.18),
+    0 0 20px rgba(22,139,255,.42);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-back,
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-top-action,
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-status-button {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.105) 0%, rgba(255,255,255,0) 30%),
+    radial-gradient(ellipse at 50% 0%, rgba(202, 220, 240, .14), transparent 58%),
+    linear-gradient(180deg, #1d2b40 0%, #121c2d 56%, #0b1321 100%);
+  border-color: rgba(93, 119, 150, .82);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.13),
+    inset 0 -7px 13px rgba(0,0,0,.30),
+    0 1px 0 rgba(255,255,255,.04),
+    0 6px 16px rgba(0,0,0,.26);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-section-heading:before,
+.portrait-hmi-root .portrait-cos-screen .portrait-section-heading:after {
+  filter: none;
+  opacity: .98;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-section-heading:before {
+  background:
+    linear-gradient(180deg, rgba(209, 236, 255, .98), rgba(22, 139, 255, .78)) right center / 2px 8px no-repeat,
+    linear-gradient(90deg, transparent 0%, rgba(37, 88, 145, .10) 30%, rgba(72, 163, 255, .46) 72%, rgba(209, 236, 255, 1) 100%) center / 100% 2px no-repeat;
+  box-shadow: 20px 0 10px rgba(22,139,255,.22);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-section-heading:after {
+  background:
+    linear-gradient(180deg, rgba(209, 236, 255, .98), rgba(22, 139, 255, .78)) left center / 2px 8px no-repeat,
+    linear-gradient(90deg, rgba(209, 236, 255, 1) 0%, rgba(72, 163, 255, .46) 28%, rgba(37, 88, 145, .10) 70%, transparent 100%) center / 100% 2px no-repeat;
+  box-shadow: -20px 0 10px rgba(22,139,255,.22);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-section-heading strong {
+  text-shadow: none;
+}
+
+/* Segmented controls: glassy selected blue, dark gunmetal inactive */
+.portrait-hmi-root .portrait-cos-screen .portrait-segment {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.055) 0%, rgba(255,255,255,0) 22%),
+    linear-gradient(180deg, #18263a 0%, #0f1929 100%);
+  border-color: rgba(100, 128, 160, .84);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    inset 0 -10px 18px rgba(0,0,0,.30),
+    0 0 0 1px rgba(5, 11, 20, .92),
+    0 10px 24px rgba(0,0,0,.30);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-segment button {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.075) 0%, rgba(255,255,255,0) 30%),
+    linear-gradient(180deg, rgba(37, 53, 74, .82) 0%, rgba(15, 25, 41, .92) 100%);
+  color: #e5eef9;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.055),
+    inset 0 -8px 14px rgba(0,0,0,.20);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-segment button + button {
+  border-left-color: rgba(104, 128, 156, .56);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-segment button[data-active="true"] {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.28) 0%, rgba(255,255,255,.045) 16%, rgba(255,255,255,0) 34%),
+    radial-gradient(ellipse at 50% 0%, rgba(125, 219, 255, .54), transparent 58%),
+    linear-gradient(180deg, #18a2ff 0%, #096bd7 48%, #053f9b 100%);
+  border-color: rgba(114, 204, 255, .98);
+  color: #ffffff;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.36),
+    inset 0 -10px 18px rgba(0,34,104,.38),
+    inset 0 0 0 1px rgba(182,229,255,.16),
+    0 0 0 1px rgba(22,139,255,.44),
+    0 10px 20px rgba(22,139,255,.22),
+    0 0 26px rgba(22,139,255,.30);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-mode-waveform {
+  filter:
+    drop-shadow(0 1px 0 rgba(0,0,0,.50))
+    drop-shadow(0 0 5px rgba(255,255,255,.12));
+}
+
+/* Parameter capsules: stronger selected Power, unified metallic inactive state */
+.portrait-hmi-root .portrait-cos-screen .portrait-param-tabs button {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.085) 0%, rgba(255,255,255,0) 30%),
+    radial-gradient(ellipse at 50% 0%, rgba(204, 222, 243, .14), transparent 58%),
+    linear-gradient(180deg, #213247 0%, #172338 55%, #0f1928 100%);
+  border-color: rgba(104, 130, 160, .84);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.11),
+    inset 0 -8px 14px rgba(0,0,0,.28),
+    0 5px 14px rgba(0,0,0,.18);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-param-tabs button[data-active="true"] {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.30) 0%, rgba(255,255,255,.05) 18%, rgba(255,255,255,0) 36%),
+    radial-gradient(ellipse at 50% 0%, rgba(132, 224, 255, .56), transparent 62%),
+    linear-gradient(180deg, #19a6ff 0%, #0970da 48%, #0546a5 100%);
+  border-color: rgba(116, 209, 255, .98);
+  color: #ffffff;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.38),
+    inset 0 -9px 16px rgba(0,35,102,.36),
+    inset 0 0 0 1px rgba(204,238,255,.16),
+    0 0 0 1px rgba(22,139,255,.42),
+    0 8px 18px rgba(22,139,255,.28),
+    0 0 24px rgba(22,139,255,.34);
+}
+
+/* Center dial: smoother chrome reflection + separated blue reflection and ambient glow */
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-value-circle {
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 50.8%, rgba(2, 6, 12, .98) 51.2% 55%, transparent 55.5%),
+    radial-gradient(circle at 30% 16%, rgba(255,255,255,.88) 0%, rgba(255,255,255,.46) 6%, rgba(255,255,255,.11) 15%, transparent 26%),
+    radial-gradient(circle at 78% 18%, rgba(56, 184, 255, .94) 0%, rgba(22,139,255,.40) 8.5%, transparent 21%),
+    radial-gradient(circle at 29% 82%, rgba(28, 155, 255, .92) 0%, rgba(22,139,255,.40) 10%, transparent 23%),
+    conic-gradient(from 224deg,
+      #05070b 0deg,
+      #161e29 12deg,
+      #7f8b9b 25deg,
+      #eef4fb 38deg,
+      #ffffff 48deg,
+      #dce5ee 61deg,
+      #98a4b2 74deg,
+      #515d6b 88deg,
+      #242d38 105deg,
+      #0a0e15 126deg,
+      #25384a 142deg,
+      #77caff 156deg,
+      #f4f8ff 180deg,
+      #c8d2de 198deg,
+      #7d8998 215deg,
+      #303a47 236deg,
+      #070b11 258deg,
+      #1d72c7 282deg,
+      #8fd7ff 294deg,
+      #d6dee8 309deg,
+      #fbfdff 326deg,
+      #8994a2 342deg,
+      #05070b 360deg);
+  box-shadow:
+    inset 0 0 0 3px rgba(0,0,0,.96),
+    inset 0 0 0 9px rgba(255,255,255,.21),
+    inset 0 0 0 15px rgba(91, 101, 114, .45),
+    inset 0 0 0 20px rgba(7, 11, 18, .98),
+    inset 0 0 0 22px rgba(22,139,255,.82),
+    inset 0 0 0 25px rgba(4,8,15,.98),
+    inset -13px -19px 28px rgba(0,0,0,.48),
+    inset 11px 12px 19px rgba(255,255,255,.15),
+    0 2px 0 rgba(255,255,255,.17),
+    0 18px 34px rgba(0,0,0,.56),
+    0 0 10px rgba(22,139,255,.28),
+    0 0 34px rgba(22,139,255,.22);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-value-circle:before {
+  background:
+    radial-gradient(circle at 50% 24%, rgba(42, 68, 102, .48), transparent 45%),
+    radial-gradient(circle at 50% 79%, rgba(0,0,0,.44), transparent 56%),
+    linear-gradient(180deg, #101a29 0%, #07101d 48%, #050a13 100%);
+  box-shadow:
+    inset 0 16px 24px rgba(0,0,0,.69),
+    inset 0 -2px 0 rgba(255,255,255,.05),
+    inset 0 0 0 1px rgba(201,213,229,.13),
+    inset 0 0 18px rgba(22,139,255,.08),
+    0 0 0 1px rgba(0,0,0,.82),
+    0 -1px 0 rgba(255,255,255,.10);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-value-circle:after {
+  border-color: rgba(99, 190, 255, .90);
+  box-shadow:
+    inset 0 0 0 1px rgba(0,0,0,.70),
+    inset 0 0 12px rgba(22,139,255,.18),
+    0 0 8px rgba(22,139,255,.24);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__content {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  align-items: end;
+  justify-content: center;
+  justify-items: center;
+  column-gap: 10px;
+  row-gap: 10px;
+  padding-top: 2px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__content span {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  margin: 0;
+  color: #dcecff;
+  text-shadow: none;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__content strong {
+  grid-column: 1;
+  grid-row: 2;
+  margin-top: 0;
+  align-self: end;
+  justify-self: end;
+  text-shadow: none;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__content small {
+  grid-column: 2;
+  grid-row: 2;
+  margin-top: 0;
+  margin-bottom: 10px;
+  align-self: end;
+  justify-self: start;
+  font-family: Inter, "Noto Sans KR", system-ui, sans-serif;
+  font-size: 24px;
+  line-height: 1;
+  text-shadow: none;
+}
+
+/* Plus / minus graphite controls behind the dial */
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.14) 0%, rgba(255,255,255,0) 28%),
+    radial-gradient(ellipse at 50% 0%, rgba(222, 235, 248, .17), transparent 58%),
+    linear-gradient(180deg, #2a3b54 0%, #172338 54%, #0d1727 100%);
+  border-color: rgba(110, 139, 172, .90);
+  color: #f5f9ff;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.18),
+    inset 0 -12px 20px rgba(0,0,0,.35),
+    inset 0 0 0 1px rgba(255,255,255,.035),
+    0 0 0 1px rgba(7, 14, 25, .92),
+    0 10px 22px rgba(0,0,0,.34),
+    0 8px 18px rgba(22,139,255,.10);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control:before {
+  background: linear-gradient(90deg, transparent, rgba(235,244,255,.50), transparent);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control:active {
+  color: #bfe2ff;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.075) 0%, rgba(255,255,255,0) 30%),
+    linear-gradient(180deg, #1d2b40 0%, #101a2b 100%);
+}
+
+/* Standby safety control: emerald glass with controlled glow */
+.portrait-hmi-root .portrait-cos-screen .portrait-laser-button[data-state="standby"] {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.10) 0%, rgba(255,255,255,0) 30%),
+    radial-gradient(ellipse at 50% 0%, rgba(74,255,177,.17), transparent 60%),
+    linear-gradient(180deg, #124d3d 0%, #0b3029 58%, #071e1b 100%);
+  border-color: #22d98a;
+  color: #41f6a8;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.15),
+    inset 0 -10px 18px rgba(0,0,0,.30),
+    0 0 0 1px rgba(34,217,138,.18),
+    0 0 18px rgba(34,217,138,.36),
+    0 10px 26px rgba(0,0,0,.28);
+}
+
+/* COS numeric control reference match — long graphite bar behind metallic dial */
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster {
+  gap: 0;
+  min-height: 252px;
+  padding-top: 2px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control {
+  z-index: 1;
+  overflow: hidden;
+  flex: 0 0 232px;
+  width: 232px;
+  height: 100px;
+  border-radius: 50px;
+  border: 1px solid rgba(105, 132, 164, .86);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.12) 0%, rgba(255,255,255,0) 30%),
+    radial-gradient(ellipse at 50% 0%, rgba(179, 207, 238, .16), transparent 58%),
+    linear-gradient(180deg, #253750 0%, #172338 52%, #0e1828 100%);
+  color: #f3f8ff;
+  font-size: 58px;
+  font-weight: 850;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.18),
+    inset 0 -12px 20px rgba(0,0,0,.34),
+    inset 0 0 0 1px rgba(255,255,255,.035),
+    0 0 0 1px rgba(7, 14, 25, .92),
+    0 10px 22px rgba(0,0,0,.34);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control:before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 28px;
+  right: 28px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(230,239,250,.48), transparent);
+  pointer-events: none;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control:after {
+  display: none;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control:first-child {
+  margin-right: -70px;
+  padding-right: 74px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control:last-child {
+  margin-left: -70px;
+  padding-left: 74px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control:active {
+  transform: translateY(2px) scale(.99);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.07) 0%, rgba(255,255,255,0) 30%),
+    linear-gradient(180deg, #1b2a40 0%, #101a2b 100%);
+  color: #9bd0ff;
+  box-shadow:
+    inset 0 10px 20px rgba(0,0,0,.46),
+    inset 0 0 0 1px rgba(255,255,255,.035),
+    0 5px 12px rgba(0,0,0,.24);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-value-circle {
+  z-index: 3;
+  flex: 0 0 248px;
+  width: 248px;
+  height: 248px;
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 50.8%, rgba(2, 6, 12, .98) 51.2% 55%, transparent 55.5%),
+    radial-gradient(circle at 31% 17%, rgba(255,255,255,.80) 0%, rgba(255,255,255,.42) 6%, rgba(255,255,255,.10) 15%, transparent 26%),
+    radial-gradient(circle at 76% 18%, rgba(22,139,255,.92) 0%, rgba(22,139,255,.38) 9%, transparent 22%),
+    radial-gradient(circle at 30% 82%, rgba(22,139,255,.86) 0%, rgba(22,139,255,.34) 10%, transparent 23%),
+    conic-gradient(from 224deg,
+      #05070b 0deg,
+      #202934 14deg,
+      #aeb8c6 29deg,
+      #ffffff 46deg,
+      #d8e1eb 60deg,
+      #7c8795 78deg,
+      #2d3642 98deg,
+      #0a0e15 123deg,
+      #168bff 143deg,
+      #f7fbff 176deg,
+      #83909f 208deg,
+      #26303b 236deg,
+      #070b11 258deg,
+      #168bff 286deg,
+      #d6dee8 310deg,
+      #f3f6fa 328deg,
+      #586572 345deg,
+      #05070b 360deg);
+  box-shadow:
+    inset 0 0 0 3px rgba(0,0,0,.96),
+    inset 0 0 0 9px rgba(255,255,255,.20),
+    inset 0 0 0 15px rgba(82, 91, 104, .44),
+    inset 0 0 0 20px rgba(7, 11, 18, .98),
+    inset 0 0 0 22px rgba(22,139,255,.80),
+    inset 0 0 0 25px rgba(4,8,15,.98),
+    inset -12px -18px 26px rgba(0,0,0,.48),
+    inset 10px 12px 18px rgba(255,255,255,.14),
+    0 2px 0 rgba(255,255,255,.16),
+    0 18px 34px rgba(0,0,0,.56),
+    0 0 24px rgba(22,139,255,.26);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-value-circle:before {
+  inset: 30px;
+  background:
+    radial-gradient(circle at 50% 24%, rgba(42, 66, 98, .46), transparent 45%),
+    radial-gradient(circle at 50% 78%, rgba(0,0,0,.42), transparent 56%),
+    linear-gradient(180deg, #101a29 0%, #07101d 48%, #050a13 100%);
+  box-shadow:
+    inset 0 16px 24px rgba(0,0,0,.68),
+    inset 0 -2px 0 rgba(255,255,255,.045),
+    inset 0 0 0 1px rgba(201,213,229,.12),
+    0 0 0 1px rgba(0,0,0,.82),
+    0 -1px 0 rgba(255,255,255,.10);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-value-circle:after {
+  inset: 21px;
+  border: 1px solid rgba(92, 181, 255, .86);
+  box-shadow:
+    inset 0 0 0 1px rgba(0,0,0,.70),
+    inset 0 0 12px rgba(22,139,255,.16),
+    0 0 8px rgba(22,139,255,.20);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding-top: 0;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__content span {
+  display: block;
+  margin: 0;
+  color: #d9e8fb;
+  font-size: 21px;
+  font-weight: 850;
+  letter-spacing: .095em;
+  line-height: 1;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__content strong {
+  display: block;
+  margin-top: 12px;
+  color: #ffffff;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 84px;
+  font-weight: 850;
+  line-height: .9;
+  letter-spacing: -.075em;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__content small {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 0;
+  color: #eaf3ff;
+  font-family: Inter, "Noto Sans KR", system-ui, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+}

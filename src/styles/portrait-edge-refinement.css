@@ -1,0 +1,84 @@
+/* COS curved-edge refinement: avoid stacked 1px borders and hard shadow spreads. */
+.portrait-hmi-root .portrait-cos-screen .portrait-segment {
+  overflow: hidden;
+  border-color: rgba(112,145,178,.28);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.055),
+    inset 0 -5px 12px rgba(0,0,0,.12),
+    0 4px 10px rgba(0,0,0,.12);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-segment button {
+  border: 0;
+  outline: 0;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.035);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-segment button + button {
+  border-left: 1px solid rgba(126,154,183,.20);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-segment button[data-active="true"] {
+  border: 0;
+  box-shadow:
+    inset 0 1px 0 rgba(228,247,255,.18),
+    inset 0 -8px 15px rgba(0,55,130,.18),
+    0 0 12px rgba(22,139,255,.13);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-param-tabs button {
+  border-color: rgba(108,139,171,.34);
+  outline: 0;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.045),
+    inset 0 -5px 11px rgba(0,0,0,.12),
+    0 3px 8px rgba(0,0,0,.10);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-param-tabs button[data-active="true"] {
+  border-color: rgba(99,192,255,.52);
+  box-shadow:
+    inset 0 1px 0 rgba(228,247,255,.20),
+    inset 0 -7px 13px rgba(0,75,154,.16),
+    0 0 12px rgba(22,139,255,.17);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-top-action,
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-status-button {
+  border-color: rgba(92,125,158,.44);
+  outline: 0;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.07),
+    inset 0 -4px 9px rgba(0,0,0,.18),
+    0 3px 7px rgba(0,0,0,.16);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-top-action[data-active="true"],
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-status-button[data-active="true"] {
+  border-color: rgba(70,170,255,.55);
+  box-shadow: inset 0 1px 0 rgba(228,247,255,.11), 0 0 10px rgba(22,139,255,.14);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control {
+  border-color: rgba(147,174,201,.48);
+  outline: 0;
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,.20),
+    inset 0 -17px 27px rgba(0,0,0,.34),
+    0 10px 22px rgba(0,0,0,.42),
+    0 0 13px rgba(22,139,255,.12);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-laser-button {
+  outline: 0;
+  border-width: 1px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-laser-button[data-state="standby"] {
+  border-color: rgba(71,232,166,.64);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.13),
+    inset 0 -11px 19px rgba(0,0,0,.24),
+    0 5px 10px rgba(0,0,0,.22),
+    0 0 8px rgba(42,221,145,.10);
+}

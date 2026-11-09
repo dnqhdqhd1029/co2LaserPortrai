@@ -1,0 +1,166 @@
+.portrait-hmi-root .portrait-calibration-work {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: #dce8f4;
+  background:
+    radial-gradient(ellipse at 50% 5%, rgba(22, 139, 255, .07), transparent 48%),
+    linear-gradient(180deg, #08111f 0%, #050b14 100%);
+}
+
+.portrait-hmi-root .portrait-calibration-work .portrait-control-header {
+  position: relative;
+  height: 76px;
+  min-height: 76px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  background: radial-gradient(ellipse at 50% 0%, rgba(22, 139, 255, .08), transparent 48%), linear-gradient(180deg, #0b1524, #070d17);
+  border-bottom: 1px solid rgba(137, 166, 195, .28);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .75), 0 4px 14px rgba(0, 0, 0, .24);
+}
+
+.portrait-hmi-root .portrait-calibration-work .portrait-header-solaco {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 174px;
+  height: auto;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  filter: drop-shadow(0 1px 0 rgba(255,255,255,.06)) drop-shadow(0 2px 3px rgba(0,0,0,.28));
+}
+
+.portrait-hmi-root .portrait-calibration-work .portrait-header-actions--right {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transform: translateY(-50%);
+}
+
+.portrait-hmi-root .portrait-calibration-work .portrait-back,
+.portrait-hmi-root .portrait-calibration-work .portrait-top-action,
+.portrait-hmi-root .portrait-calibration-work .portrait-status-button {
+  height: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  border: 1px solid rgba(78, 112, 148, .62);
+  border-radius: 13px;
+  color: #dce8f4;
+  background: linear-gradient(180deg, rgba(255,255,255,.065), transparent 27%), linear-gradient(180deg, #18263a, #0d1727);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.09), inset 0 -5px 9px rgba(0,0,0,.22), 0 3px 8px rgba(0,0,0,.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.portrait-hmi-root .portrait-calibration-work .portrait-back {
+  z-index: 2;
+  width: auto;
+  min-width: 76px;
+  gap: 5px;
+  padding: 0 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.portrait-hmi-root .portrait-calibration-work .portrait-control-header .portrait-back span {
+  display: inline;
+  font-size: 12px;
+}
+
+.portrait-hmi-root .portrait-calibration-work .portrait-top-action,
+.portrait-hmi-root .portrait-calibration-work .portrait-status-button:not(.portrait-status-button--aim) {
+  width: 40px;
+  min-width: 40px;
+  padding: 0;
+}
+
+.portrait-hmi-root .portrait-calibration-work .portrait-status-button--aim {
+  width: auto;
+  min-width: 66px;
+  padding: 0 8px;
+  gap: 3px;
+}
+
+.portrait-hmi-root .portrait-calibration-work .portrait-top-action span,
+.portrait-hmi-root .portrait-calibration-work .portrait-status-button:not(.portrait-status-button--aim) span { display: none; }
+.portrait-hmi-root .portrait-calibration-work .portrait-top-action[data-text-only="true"] span { display: block; font-size: 10px; font-weight: 800; letter-spacing: .04em; }
+.portrait-hmi-root .portrait-calibration-work .portrait-icon { width: 20px; height: 20px; }
+.portrait-hmi-root .portrait-calibration-work .portrait-status-button--aim .portrait-icon:last-child { width: 13px; height: 13px; }
+.portrait-hmi-root .portrait-calibration-work .portrait-status-button--aim span { font-size: 15px; font-weight: 800; }
+
+.portrait-hmi-root .portrait-calibration-work .portrait-top-action[data-active="true"],
+.portrait-hmi-root .portrait-calibration-work .portrait-status-button[data-active="true"] {
+  color: #aadaff;
+  border-color: rgba(22,139,255,.72);
+  background: radial-gradient(circle at 50% 0%, rgba(57,184,255,.18), transparent 62%), linear-gradient(180deg, #1b3049, #101c2d);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 0 11px rgba(22,139,255,.18);
+}
+
+.portrait-hmi-root .portrait-calibration-work .portrait-calibration-titlebar {
+  height: 82px;
+  min-height: 82px;
+  margin: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(105, 137, 171, .27);
+}
+
+.portrait-hmi-root .portrait-calibration-work .portrait-calibration-titlebar h1 {
+  margin: 0;
+  color: #e7f1fb;
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -.02em;
+}
+
+.portrait-hmi-root .portrait-calibration-work .portrait-calibration-titlebar button {
+  height: 40px;
+  min-width: 78px;
+  padding: 0 18px;
+  border-radius: 11px;
+  border: 1px solid rgba(86, 121, 158, .62);
+  color: #c7d7e7;
+  background: linear-gradient(180deg, rgba(255,255,255,.06), transparent 30%), linear-gradient(180deg, #162438, #0c1625);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 3px 8px rgba(0,0,0,.24);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.portrait-hmi-root .portrait-calibration-work .portrait-calibration-panels {
+  flex: 1;
+  min-height: 0;
+  margin: 20px 30px 30px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.portrait-hmi-root .portrait-calibration-work .portrait-calibration-panel {
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid rgba(82, 116, 151, .48);
+  border-radius: 16px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.025), transparent 18%),
+    radial-gradient(circle at 50% 0%, rgba(22,139,255,.035), transparent 52%),
+    #081321;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.035), inset 0 -1px 0 rgba(0,0,0,.55), 0 10px 25px rgba(0,0,0,.2);
+}
+
+@media (max-width: 820px) {
+  .portrait-hmi-root .portrait-calibration-work .portrait-header-solaco { width: 132px; }
+}

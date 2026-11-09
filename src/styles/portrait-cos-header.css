@@ -1,0 +1,58 @@
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header {
+  position: relative; height: 76px; min-height: 76px; padding: 0 18px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: radial-gradient(ellipse at 50% 0%,rgba(22,139,255,.08),transparent 48%),linear-gradient(180deg,#0b1524,#070d17);
+  border-bottom: 1px solid rgba(137,166,195,.28);
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.75),0 4px 14px rgba(0,0,0,.24);
+}
+.portrait-hmi-root .portrait-cos-screen .portrait-header-solaco {
+  position:absolute; z-index:1; left:50%; top:50%; width:174px; height:auto;
+  transform:translate(-50%,-50%); pointer-events:none;
+  filter:drop-shadow(0 1px 0 rgba(255,255,255,.06)) drop-shadow(0 2px 3px rgba(0,0,0,.28));
+}
+.portrait-hmi-root .portrait-cos-screen .portrait-header-actions { position:relative; z-index:2; display:flex; align-items:center; gap:8px; }
+.portrait-hmi-root .portrait-cos-screen .portrait-header-actions--left {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  margin: 0;
+  transform: translateY(-50%);
+}
+.portrait-hmi-root .portrait-cos-screen .portrait-header-actions--right {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  margin: 0;
+  transform: translateY(-50%);
+}
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-top-action,
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-status-button {
+  width:44px; min-width:44px; height:40px; min-height:40px; max-height:40px; padding:0; border-radius:13px;
+  display:flex; align-items:center; justify-content:center;
+  background:linear-gradient(180deg,rgba(255,255,255,.065),transparent 27%),linear-gradient(180deg,#18263a,#0d1727);
+  border:1px solid rgba(78,112,148,.62); color:#dce8f4;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.09),inset 0 -5px 9px rgba(0,0,0,.22),0 3px 8px rgba(0,0,0,.2);
+}
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-top-action {
+  width:40px;
+  min-width:40px;
+}
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-top-action span,
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-status-button:not(.portrait-status-button--aim) span { display:none; }
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-top-action[data-text-only="true"] span {
+  display:block;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.04em;
+}
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-icon { width:20px; height:20px; min-width:20px; min-height:20px; stroke-width:2; }
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-status-button--aim { width:auto; min-width:66px; height:40px; min-height:40px; max-height:40px; padding:0 8px; gap:3px; }
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-status-button--aim .portrait-icon:first-child { width:20px; height:20px; }
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-status-button--aim .portrait-icon:last-child { width:13px; height:13px; }
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-status-button--aim span { font-size:15px; font-weight:800; }
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-top-action[data-active="true"],
+.portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-status-button[data-active="true"] {
+  color:#aadaff; border-color:rgba(22,139,255,.72);
+  background:radial-gradient(circle at 50% 0%,rgba(57,184,255,.18),transparent 62%),linear-gradient(180deg,#1b3049,#101c2d);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 0 11px rgba(22,139,255,.18);
+}

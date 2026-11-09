@@ -1,0 +1,550 @@
+/* Q-TECH boot screen only: Medical Precision × Automotive Digital GUI. */
+.portrait-hmi-root .portrait-splash-screen {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(5,11,22,.25), rgba(5,11,22,.42)),
+    radial-gradient(ellipse at 50% 42%, rgba(7,29,58,.10) 0%, rgba(5,11,22,.18) 52%, rgba(5,11,22,.44) 100%),
+    url("../assets/splash-premium-background-v4.png") center / cover no-repeat,
+    #050b16;
+}
+
+.portrait-hmi-root .portrait-splash-screen:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent 0 9%, rgba(168,188,208,.055) 9.1%, transparent 9.25% 90.75%, rgba(168,188,208,.055) 90.9%, transparent 91%),
+    linear-gradient(180deg, transparent 0 11%, rgba(72,184,255,.04) 11.1%, transparent 11.25% 88.75%, rgba(72,184,255,.04) 88.9%, transparent 89%);
+  pointer-events: none;
+}
+
+.portrait-hmi-root .portrait-splash-orbit {
+  display: block;
+  position: absolute;
+  z-index: 0;
+  border: 1px solid rgba(188,204,219,.24);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 1;
+  background: transparent;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.025), 0 0 8px rgba(22,139,255,.06);
+}
+
+.portrait-hmi-root .portrait-splash-orbit:before,
+.portrait-hmi-root .portrait-splash-orbit:after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 18px;
+  border-radius: 50%;
+  border: 1px solid rgba(72,184,255,.13);
+  background: transparent;
+}
+
+.portrait-hmi-root .portrait-splash-orbit:before {
+  inset: 42px;
+  border-color: rgba(133,151,169,.10);
+}
+
+.portrait-hmi-root .portrait-splash-orbit--navy {
+  display: none;
+}
+
+.portrait-hmi-root .portrait-splash-orbit--violet {
+  display: block;
+  width: 680px;
+  height: 680px;
+  right: -405px;
+  bottom: -390px;
+  background: transparent !important;
+  border-color: rgba(206,221,233,.32);
+  border-top-color: rgba(231,241,248,.45);
+  border-left-color: rgba(41,118,194,.24);
+  border-bottom-color: rgba(0,123,255,.27);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.045),
+    inset 0 0 20px rgba(5,28,54,.28),
+    0 0 0 1px rgba(0,123,255,.08),
+    0 0 9px rgba(0,123,255,.09);
+  clip-path: polygon(24% 0, 100% 0, 100% 100%, 0 100%);
+  filter: drop-shadow(-2px -2px 4px rgba(72,184,255,.08));
+}
+
+.portrait-hmi-root .portrait-splash-orbit--violet:before,
+.portrait-hmi-root .portrait-splash-orbit--violet:after {
+  width: auto;
+  height: auto;
+  left: 18px;
+  right: 18px;
+  top: 18px;
+  bottom: 18px;
+  background: transparent;
+  border-top-color: rgba(217,227,237,.22);
+  border-left-color: rgba(34,95,154,.12);
+  border-bottom-color: rgba(0,123,255,.18);
+}
+
+.portrait-hmi-root .portrait-splash-orbit--violet:before {
+  left: 42px;
+  right: 42px;
+  top: 42px;
+  bottom: 42px;
+}
+
+.portrait-hmi-root .portrait-splash-orbit--navy-small {
+  display: none;
+}
+
+.portrait-hmi-root .portrait-splash-orbit--green-small {
+  display: none;
+}
+
+.portrait-hmi-root .portrait-splash-content {
+  position: relative;
+  z-index: 1;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.portrait-hmi-root .portrait-splash-logo {
+  width: 420px;
+  filter: drop-shadow(0 5px 8px rgba(0,0,0,.22));
+}
+
+.portrait-hmi-root .portrait-splash-logo svg {
+  overflow: visible;
+}
+
+.portrait-hmi-root .portrait-splash-logo svg path {
+  transition: none;
+}
+
+.portrait-hmi-root .portrait-splash-logo svg path:first-of-type {
+  filter: drop-shadow(0 1px 0 rgba(255,255,255,.28)) drop-shadow(0 3px 3px rgba(0,0,0,.20));
+}
+
+.portrait-hmi-root .portrait-splash-brand {
+  margin-top: 17px;
+}
+
+.portrait-hmi-root .portrait-splash-brand span {
+  color: #a8bcd0;
+  font-size: 13px;
+  font-weight: 750;
+  letter-spacing: .25em;
+  text-shadow: 0 1px 0 rgba(255,255,255,.04);
+}
+
+.portrait-hmi-root .portrait-splash-segments {
+  position: relative;
+  width: 326px;
+  height: 14px;
+  margin-top: 34px;
+  display: block;
+  overflow: hidden;
+  border: 1px solid rgba(164,222,255,.66);
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, rgba(0,79,173,.36), rgba(0,123,255,.52) 46%, rgba(22,139,255,.42) 64%, rgba(0,70,151,.34)),
+    linear-gradient(180deg, rgba(8,41,76,.96), rgba(3,18,37,.98));
+  box-shadow:
+    inset 0 1px 2px rgba(0,0,0,.65),
+    inset 0 1px 0 rgba(228,247,255,.13),
+    inset 0 0 0 1px rgba(0,123,255,.22),
+    0 0 8px rgba(0,123,255,.30),
+    0 2px 8px rgba(0,0,0,.28);
+}
+
+.portrait-hmi-root .portrait-splash-segments i,
+.portrait-hmi-root .portrait-splash-segments i:nth-child(n+6) {
+  display: none;
+}
+
+.portrait-hmi-root .portrait-splash-segments:before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  height: auto;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(228,247,255,.08), transparent 55%);
+  pointer-events: none;
+}
+
+.portrait-hmi-root .portrait-splash-segments:after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: -150px;
+  width: 148px;
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,
+    transparent 0%, #007bff 15%, #168bff 36%, #39b8ff 64%,
+    #e4f7ff 82%, rgba(72,184,255,.68) 91%, transparent 100%);
+  box-shadow: 0 0 4px rgba(228,247,255,.38), 0 0 8px rgba(0,123,255,.38);
+  animation: portrait-splash-light-sweep 1.9s cubic-bezier(.42,0,.58,1) infinite;
+}
+
+.portrait-hmi-root .portrait-splash-label {
+  margin-top: 15px;
+  color: #a8bcd0;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .28em;
+}
+
+@keyframes portrait-splash-blue-sequence {
+  0%, 62%, 100% {
+    opacity: .14;
+    background: #168bff;
+    box-shadow: 0 0 0 1px rgba(72,184,255,.10), 0 0 4px rgba(22,139,255,.08);
+  }
+  24% {
+    opacity: 1;
+    background: #e4f7ff;
+    box-shadow: 0 0 3px #e4f7ff, 0 0 11px rgba(57,184,255,.58);
+  }
+}
+
+@keyframes portrait-splash-light-sweep {
+  0% { transform: translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  86% { opacity: 1; }
+  100% { transform: translateX(476px); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portrait-hmi-root .portrait-splash-segments i,
+  .portrait-hmi-root .portrait-splash-segments i:nth-child(n+6) {
+    animation: none;
+    opacity: .68;
+  }
+
+  .portrait-hmi-root .portrait-splash-segments:after {
+    animation: none;
+    left: 89px;
+    opacity: .72;
+  }
+}
+
+/* Final splash-only pass: premium medical boot screen aligned with COS dark cockpit. */
+.portrait-hmi-root .portrait-splash-screen {
+  background:
+    linear-gradient(180deg, rgba(5,11,22,.22), rgba(5,11,22,.38)),
+    radial-gradient(ellipse at 50% 42%, rgba(7,29,58,.06) 0%, rgba(5,11,22,.12) 50%, rgba(5,11,22,.38) 100%),
+    url("../assets/splash-premium-background-v4.png") center / cover no-repeat,
+    #050b16;
+}
+
+.portrait-hmi-root .portrait-splash-screen:after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(72,184,255,.045) 0 1px, transparent 1.5px) 0 0 / 42px 42px,
+    linear-gradient(180deg, rgba(255,255,255,.035), transparent 16%, transparent 84%, rgba(22,139,255,.035));
+  opacity: .52;
+  pointer-events: none;
+}
+
+.portrait-hmi-root .portrait-splash-orbit {
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.026),
+    inset 0 0 28px rgba(255,255,255,.025),
+    0 0 10px rgba(22,139,255,.07);
+}
+
+.portrait-hmi-root .portrait-splash-orbit:after {
+  border-color: rgba(72,184,255,.18);
+  box-shadow: 0 0 10px rgba(22,139,255,.08);
+}
+
+.portrait-hmi-root .portrait-splash-orbit--navy {
+  background:
+    radial-gradient(circle at 73% 72%, rgba(255,255,255,.08), transparent 10%),
+    conic-gradient(from 198deg,
+      transparent 0 21deg,
+      rgba(93,111,130,.12) 35deg,
+      rgba(217,227,237,.56) 52deg,
+      rgba(255,255,255,.84) 66deg,
+      rgba(143,161,180,.28) 88deg,
+      rgba(22,139,255,.30) 112deg,
+      transparent 143deg 360deg);
+  border-color: rgba(217,227,237,.34);
+}
+
+.portrait-hmi-root .portrait-splash-orbit--violet {
+  background:
+    radial-gradient(circle at 24% 20%, rgba(255,255,255,.06), transparent 12%),
+    conic-gradient(from 12deg,
+      transparent 0 186deg,
+      rgba(72,88,106,.12) 214deg,
+      rgba(217,227,237,.45) 246deg,
+      rgba(255,255,255,.70) 262deg,
+      rgba(72,184,255,.54) 282deg,
+      rgba(22,139,255,.18) 306deg,
+      transparent 333deg 360deg);
+  border-color: rgba(72,184,255,.28);
+}
+
+.portrait-hmi-root .portrait-splash-orbit--navy-small {
+  background:
+    conic-gradient(from 155deg,
+      transparent 0 54deg,
+      rgba(22,139,255,.20) 70deg,
+      rgba(72,184,255,.42) 84deg,
+      rgba(236,248,255,.60) 102deg,
+      rgba(126,145,163,.18) 132deg,
+      transparent 166deg 360deg);
+}
+
+.portrait-hmi-root .portrait-splash-orbit--green-small {
+  background:
+    conic-gradient(from 340deg,
+      transparent 0 54deg,
+      rgba(116,137,157,.18) 80deg,
+      rgba(217,227,237,.42) 104deg,
+      rgba(72,184,255,.30) 128deg,
+      transparent 162deg 360deg);
+}
+
+.portrait-hmi-root .portrait-splash-content {
+  margin-top: -18px;
+}
+
+.portrait-hmi-root .portrait-splash-logo {
+  width: 420px;
+  filter:
+    drop-shadow(0 1px 0 rgba(255,255,255,.08))
+    drop-shadow(0 8px 10px rgba(0,0,0,.32));
+}
+
+.portrait-hmi-root .portrait-splash-logo svg path {
+  filter: drop-shadow(0 1px 0 rgba(255,255,255,.08));
+}
+
+.portrait-hmi-root .portrait-splash-logo svg path:nth-of-type(2),
+.portrait-hmi-root .portrait-splash-logo svg path:nth-of-type(3),
+.portrait-hmi-root .portrait-splash-logo svg path:last-of-type {
+  filter:
+    drop-shadow(0 0 4px rgba(72,184,255,.32))
+    drop-shadow(0 0 10px rgba(22,139,255,.16));
+}
+
+.portrait-hmi-root .portrait-splash-brand {
+  margin-top: 34px;
+}
+
+.portrait-hmi-root .portrait-splash-brand span {
+  color: #a8bcd0;
+  font-size: 17px;
+  font-weight: 760;
+  letter-spacing: .29em;
+}
+
+.portrait-hmi-root .portrait-splash-segments {
+  width: 286px;
+  height: 16px;
+  margin-top: 54px;
+  gap: 12px;
+}
+
+.portrait-hmi-root .portrait-splash-segments i,
+.portrait-hmi-root .portrait-splash-segments i:nth-child(n+6) {
+  width: 12px;
+  height: 12px;
+  flex-basis: 12px;
+  background:
+    radial-gradient(circle at 36% 30%, #e4f7ff 0%, #48b8ff 32%, #168bff 72%, #073a80 100%);
+  opacity: .18;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.28),
+    0 0 0 1px rgba(72,184,255,.10),
+    0 0 8px rgba(22,139,255,.12);
+  animation-name: portrait-splash-blue-sequence;
+}
+
+.portrait-hmi-root .portrait-splash-label {
+  position: relative;
+  margin-top: 24px;
+  color: #d7e5f4;
+  font-size: 13px;
+  font-weight: 780;
+  letter-spacing: .31em;
+}
+
+.portrait-hmi-root .portrait-splash-label:before,
+.portrait-hmi-root .portrait-splash-label:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 74px;
+  height: 2px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Q-TECH spark becomes the moving light source on the loading beam. */
+.portrait-hmi-root .portrait-splash-segments:after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 2;
+  left: -138px;
+  top: 5px;
+  width: 138px;
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,
+    transparent 0%, rgba(22,139,255,.08) 18%, rgba(22,139,255,.30) 43%,
+    rgba(57,184,255,.70) 65%, #e4f7ff 80%, rgba(228,247,255,.24) 91%, transparent 100%);
+  filter: blur(.2px);
+  box-shadow:
+    0 0 3px rgba(228,247,255,.55),
+    0 0 7px rgba(57,184,255,.42),
+    0 0 13px rgba(22,139,255,.20);
+  animation: portrait-splash-light-flow 1.85s cubic-bezier(.42,0,.58,1) infinite;
+}
+
+@keyframes portrait-splash-light-flow {
+  from { transform: translateX(0); }
+  to { transform: translateX(450px); }
+}
+
+/* Anchor the 420×355 logo itself to the vertical center of the 1024px display. */
+.portrait-hmi-root .portrait-splash-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  margin: 0;
+  transform: translate(-50%, -177.5px);
+}
+
+.portrait-hmi-root .portrait-splash-sweep-mark {
+  position: absolute;
+  z-index: 2;
+  left: -27px;
+  top: -3px;
+  width: 27px;
+  height: 27px;
+  overflow: visible;
+  filter:
+    drop-shadow(0 0 2px rgba(228,247,255,.70))
+    drop-shadow(0 0 5px rgba(57,184,255,.48))
+    drop-shadow(0 0 9px rgba(22,139,255,.26));
+  animation: portrait-splash-spark-sweep 1.9s cubic-bezier(.42,0,.58,1) infinite;
+}
+
+@keyframes portrait-splash-spark-sweep {
+  0% { transform: translateX(0) scale(.72); opacity: 0; }
+  10% { opacity: 1; }
+  48% { transform: translateX(174px) scale(.92); opacity: 1; }
+  88% { opacity: 1; }
+  100% { transform: translateX(347px) scale(.72); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portrait-hmi-root .portrait-splash-sweep-mark {
+    animation: none;
+    left: 147px;
+    transform: scale(.86);
+    opacity: .9;
+  }
+}
+
+/* Final loading treatment: pure light beam, no label ornaments. */
+.portrait-hmi-root .portrait-splash-segments {
+  position: relative;
+  display: block;
+  width: 320px;
+  height: 18px;
+  margin-top: 36px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.portrait-hmi-root .portrait-splash-segments i,
+.portrait-hmi-root .portrait-splash-segments i:nth-child(n+6) {
+  display: none;
+}
+
+.portrait-hmi-root .portrait-splash-segments:before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  top: 8px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,
+    transparent 0%, rgba(22,139,255,.18) 8%, rgba(57,184,255,.55) 32%,
+    rgba(228,247,255,.78) 50%, rgba(57,184,255,.55) 68%, rgba(22,139,255,.18) 92%, transparent 100%);
+  box-shadow: 0 0 4px rgba(57,184,255,.32), 0 0 9px rgba(0,123,255,.16);
+}
+
+.portrait-hmi-root .portrait-splash-segments:after {
+  content: "";
+  position: absolute;
+  left: -124px;
+  top: 5px;
+  width: 124px;
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,
+    transparent 0%, rgba(22,139,255,.28) 22%, #39b8ff 55%, #e4f7ff 76%, rgba(57,184,255,.34) 90%, transparent 100%);
+  filter: blur(.25px);
+  box-shadow: 0 0 5px rgba(228,247,255,.38), 0 0 12px rgba(0,123,255,.30);
+  animation: portrait-splash-light-sweep 1.85s cubic-bezier(.42,0,.58,1) infinite;
+}
+
+.portrait-hmi-root .portrait-splash-label {
+  margin-top: 14px;
+}
+
+.portrait-hmi-root .portrait-splash-label:before,
+.portrait-hmi-root .portrait-splash-label:after {
+  content: none;
+  display: none;
+}
+
+.portrait-hmi-root .portrait-splash-label:before {
+  right: calc(100% + 28px);
+  background: linear-gradient(90deg, transparent, rgba(72,184,255,.28), rgba(226,244,255,.92));
+  box-shadow: 10px 0 9px rgba(22,139,255,.20);
+}
+
+.portrait-hmi-root .portrait-splash-label:after {
+  left: calc(100% + 28px);
+  background: linear-gradient(90deg, rgba(226,244,255,.92), rgba(72,184,255,.28), transparent);
+  box-shadow: -10px 0 9px rgba(22,139,255,.20);
+}
+
+.portrait-hmi-root .portrait-splash-segments:after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 2;
+  left: -112px;
+  top: 3px;
+  width: 112px;
+  height: 12px;
+  border-radius: 999px;
+  background:
+    radial-gradient(ellipse at 78% 50%,
+      #ffffff 0 2%, #e4f7ff 6%, rgba(57,184,255,.92) 15%,
+      rgba(22,139,255,.48) 32%, rgba(22,139,255,.16) 54%, transparent 76%);
+  filter: blur(.55px) drop-shadow(0 0 3px rgba(228,247,255,.60)) drop-shadow(0 0 7px rgba(22,139,255,.34));
+  box-shadow: none;
+  mix-blend-mode: screen;
+  animation: portrait-splash-light-flow 1.45s linear -.48s infinite;
+}
