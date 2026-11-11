@@ -184,7 +184,7 @@ export function PortraitModeSelection({onCOS, onFRX}: { onCOS: () => void; onFRX
 
 function TopAction({icon, label, active, onClick, textOnly = false}: {
     icon: "folder" | "save" | "camera" | "memo" | "call";
-    label: string;
+    label: string; 1
     active?: boolean;
     onClick: () => void;
     textOnly?: boolean
@@ -334,14 +334,14 @@ export function PortraitCOSControl({state, update, onBack, onCalibration, forced
             </div>
             <img className="portrait-header-solaco" src={solacoLogo} alt="SOLACO"/>
             <div className="portrait-header-actions portrait-header-actions--right">
-                <button className="portrait-status-button" data-active={state.soundOn}
+                <button className="portrait-status-button" data-active={false}
                         onClick={() => update({soundOn: !state.soundOn})}
                         aria-label={state.soundOn ? "Sound on" : "Sound off"}
                         title={state.soundOn ? "Sound on" : "Sound off"}><Icon
                     name={state.soundOn ? "sound" : "soundOff"}/><span>Sound</span></button>
                 <div className="portrait-aim-wrap" ref={aimRef}>
                     <button className="portrait-status-button portrait-status-button--aim"
-                            data-active={state.aimingLevel > 0} onClick={() => setAimOpen(v => !v)}
+                            data-active={false} onClick={() => setAimOpen(v => !v)}
                             aria-label={`Aiming ${state.aimingLevel || "OFF"}`} title="Aiming"><Icon
                         name="target"/><span>{state.aimingLevel || "OFF"}</span><Icon name="chevron"/></button>
                     {aimOpen && <div className="portrait-aim-popover">
@@ -362,7 +362,7 @@ export function PortraitCOSControl({state, update, onBack, onCalibration, forced
                         </button>
                     </div>}
                 </div>
-                <TopAction icon="camera" label="Camera" onClick={() => onCalibration?.()} textOnly/>
+                <TopAction icon="camera" label="Camera" active={false} onClick={() => onCalibration?.()} textOnly/>
             </div>
         </header>
 

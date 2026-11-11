@@ -3,6 +3,8 @@
     position: relative;
     isolation: isolate;
     gap: 0;
+    transform: scale(1.12);
+    transform-origin: center;
 }
 
 .portrait-hmi-root .portrait-cos-screen .portrait-adjuster:before {

@@ -45,6 +45,20 @@
   font-weight:800;
   letter-spacing:.04em;
 }
+.portrait-hmi-root .portrait-cos-screen .portrait-header-actions--left .portrait-top-action {
+  width: 58px;
+  min-width: 58px;
+}
+.portrait-hmi-root .portrait-cos-screen .portrait-header-actions--left .portrait-top-action .portrait-icon {
+  display: none;
+}
+.portrait-hmi-root .portrait-cos-screen .portrait-header-actions--left .portrait-top-action span {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
 .portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-icon { width:20px; height:20px; min-width:20px; min-height:20px; stroke-width:2; }
 .portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-status-button--aim { width:auto; min-width:66px; height:40px; min-height:40px; max-height:40px; padding:0 8px; gap:3px; }
 .portrait-hmi-root .portrait-cos-screen .portrait-control-header .portrait-status-button--aim .portrait-icon:first-child { width:20px; height:20px; }
