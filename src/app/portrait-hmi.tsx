@@ -146,10 +146,7 @@ export function PortraitSplash({onDone}: { onDone: () => void }) {
         return () => window.clearTimeout(timer);
     }, [onDone]);
     return <main className="portrait-screen portrait-splash-screen" data-portrait-screen="splash">
-        <div className="portrait-splash-orbit portrait-splash-orbit--navy"/>
-        <div className="portrait-splash-orbit portrait-splash-orbit--violet"/>
-        <div className="portrait-splash-orbit portrait-splash-orbit--navy-small"/>
-        <div className="portrait-splash-orbit portrait-splash-orbit--green-small"/>
+       
         <section className="portrait-splash-content">
             <div className="portrait-splash-logo">
                 <HQTechLogo width={420} blueColor="#D9E3ED" greenColor="#48B8FF" premium/>
