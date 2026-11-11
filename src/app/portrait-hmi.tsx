@@ -205,10 +205,20 @@ function LightModal({title, onClose, children}: { title: string; onClose: () => 
 }
 
 function ParameterValueCircle({value, unit, label}: { value: string | number; unit: string; label: string }) {
+    const valueText = String(value);
+    const valueSpacingClass = valueText.includes(".")
+        ? "portrait-value-circle__value--decimal"
+        : Math.abs(Number(value)) >= 10
+            ? "portrait-value-circle__value--two-digit"
+            : undefined;
+
     return <div className="portrait-value-circle">
         <div className="portrait-value-circle__content">
             <span>{label}</span>
-            <div className="portrait-value-circle__reading"><strong>{value}</strong><small>{unit}</small></div>
+            <div className="portrait-value-circle__reading">
+                <strong className={valueSpacingClass}>{value}</strong>
+                <small>{unit}</small>
+            </div>
         </div>
     </div>;
 }

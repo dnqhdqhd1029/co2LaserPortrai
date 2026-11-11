@@ -1,125 +1,130 @@
 /* Final COS dial skin. Kept separate so legacy portrait theme overrides cannot flatten it. */
 .portrait-hmi-root .portrait-cos-screen .portrait-adjuster {
-  position: relative;
-  isolation: isolate;
-  gap: 0;
+    position: relative;
+    isolation: isolate;
+    gap: 0;
 }
 
 .portrait-hmi-root .portrait-cos-screen .portrait-adjuster:before {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  left: 50%;
-  top: 50%;
-  width: 286px;
-  height: 286px;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 76% 20%, rgba(228,247,255,.48) 0 2%, rgba(57,184,255,.42) 6%, rgba(22,139,255,.22) 18%, transparent 35%),
-    radial-gradient(circle at 24% 82%, rgba(112,207,255,.36) 0 3%, rgba(22,139,255,.21) 14%, transparent 33%);
-  filter: blur(12px);
+    content: "";
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    width: 286px;
+    height: 286px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    background: radial-gradient(circle at 76% 20%, rgba(228, 247, 255, .48) 0 2%, rgba(57, 184, 255, .42) 6%, rgba(22, 139, 255, .22) 18%, transparent 35%),
+    radial-gradient(circle at 24% 82%, rgba(112, 207, 255, .36) 0 3%, rgba(22, 139, 255, .21) 14%, transparent 33%);
+    filter: blur(12px);
 }
 
 .portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control {
-  z-index: 1;
-  overflow: hidden;
-  border: 1px solid rgba(161, 184, 211, .78);
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.26) 0, rgba(255,255,255,.08) 7%, transparent 29%),
-    radial-gradient(ellipse at 50% -12%, rgba(211,229,248,.30) 0, transparent 57%),
+    z-index: 1;
+    overflow: hidden;
+    border: 1px solid rgba(161, 184, 211, .78);
+    background: linear-gradient(180deg, rgba(255, 255, 255, .26) 0, rgba(255, 255, 255, .08) 7%, transparent 29%),
+    radial-gradient(ellipse at 50% -12%, rgba(211, 229, 248, .30) 0, transparent 57%),
     linear-gradient(180deg, #40536b 0%, #293b53 18%, #18263a 53%, #0a1220 100%);
-  color: #fff;
-  text-shadow: 0 1px 0 rgba(255,255,255,.22), 0 0 10px rgba(92,174,255,.18);
-  box-shadow:
-    inset 0 2px 0 rgba(255,255,255,.25), inset 0 0 0 2px rgba(9,18,31,.76),
-    inset 0 -18px 28px rgba(0,0,0,.38), 0 0 0 1px rgba(3,8,15,.92),
-    0 12px 24px rgba(0,0,0,.48), 0 0 16px rgba(22,139,255,.17);
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .22), 0 0 10px rgba(92, 174, 255, .18);
+    box-shadow: inset 0 2px 0 rgba(255, 255, 255, .25), inset 0 0 0 2px rgba(9, 18, 31, .76),
+    inset 0 -18px 28px rgba(0, 0, 0, .38), 0 0 0 1px rgba(3, 8, 15, .92),
+    0 12px 24px rgba(0, 0, 0, .48), 0 0 16px rgba(22, 139, 255, .17);
 }
 
 .portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-round-control:before {
-  top: 2px;
-  left: 24px;
-  right: 24px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(244,250,255,.78), rgba(143,197,255,.44), transparent);
-  box-shadow: 0 1px 5px rgba(111,187,255,.25);
+    top: 2px;
+    left: 24px;
+    right: 24px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(244, 250, 255, .78), rgba(143, 197, 255, .44), transparent);
+    box-shadow: 0 1px 5px rgba(111, 187, 255, .25);
 }
 
 .portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-value-circle {
-  z-index: 4;
-  position: relative;
-  background:
-    radial-gradient(ellipse at 25% 8%, rgba(255,255,255,.96) 0 2%, rgba(255,255,255,.50) 9%, rgba(255,255,255,.12) 20%, transparent 31%),
-    radial-gradient(ellipse at 82% 17%, rgba(228,247,255,.98) 0 2%, rgba(57,184,255,.84) 7%, rgba(22,139,255,.28) 17%, transparent 30%),
-    radial-gradient(ellipse at 18% 80%, rgba(112,207,255,.34) 0 2%, rgba(22,139,255,.14) 10%, transparent 24%),
+    z-index: 4;
+    position: relative;
+    background: radial-gradient(ellipse at 25% 8%, rgba(255, 255, 255, .96) 0 2%, rgba(255, 255, 255, .50) 9%, rgba(255, 255, 255, .12) 20%, transparent 31%),
+    radial-gradient(ellipse at 82% 17%, rgba(228, 247, 255, .98) 0 2%, rgba(57, 184, 255, .84) 7%, rgba(22, 139, 255, .28) 17%, transparent 30%),
+    radial-gradient(ellipse at 18% 80%, rgba(112, 207, 255, .34) 0 2%, rgba(22, 139, 255, .14) 10%, transparent 24%),
     conic-gradient(from 218deg,
-      #65727c 0deg, #8e9aa4 18deg, #cbd3da 36deg, #f5f8fa 54deg,
-      #ffffff 68deg, #e4e9ed 84deg, #bcc5cc 104deg, #89959e 126deg,
-      #65727c 148deg, #4c5a65 170deg, #647581 194deg, #8e9da8 218deg,
-      #bbc5cc 242deg, #e1e6ea 264deg, #f8fafb 282deg, #dce3e7 300deg,
-      #b2bdc5 320deg, #8b98a2 340deg, #65727c 360deg);
-  box-shadow:
-    inset 7px 8px 14px rgba(255,255,255,.20),
-    inset -8px -13px 20px rgba(0,0,0,.34),
-    inset 0 0 0 1px rgba(255,255,255,.36),
-    0 2px 0 rgba(255,255,255,.42),
-    0 20px 35px rgba(0,0,0,.68),
-    0 0 17px rgba(28,141,255,.18);
+            #65727c 0deg, #8e9aa4 18deg, #cbd3da 36deg, #f5f8fa 54deg,
+            #ffffff 68deg, #e4e9ed 84deg, #bcc5cc 104deg, #89959e 126deg,
+            #65727c 148deg, #4c5a65 170deg, #647581 194deg, #8e9da8 218deg,
+            #bbc5cc 242deg, #e1e6ea 264deg, #f8fafb 282deg, #dce3e7 300deg,
+            #b2bdc5 320deg, #8b98a2 340deg, #65727c 360deg);
+    box-shadow: inset 7px 8px 14px rgba(255, 255, 255, .20),
+    inset -8px -13px 20px rgba(0, 0, 0, .34),
+    inset 0 0 0 1px rgba(255, 255, 255, .36),
+    0 2px 0 rgba(255, 255, 255, .42),
+    0 20px 35px rgba(0, 0, 0, .68),
+    0 0 17px rgba(28, 141, 255, .18);
 }
 
 .portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-value-circle:before {
-  inset: 27px;
-  background:
-    radial-gradient(ellipse at 50% 4%, rgba(31,73,119,.31), transparent 44%),
-    radial-gradient(circle at 78% 28%, rgba(15,77,142,.12), transparent 38%),
+    inset: 27px;
+    background: radial-gradient(ellipse at 50% 4%, rgba(31, 73, 119, .31), transparent 44%),
+    radial-gradient(circle at 78% 28%, rgba(15, 77, 142, .12), transparent 38%),
     linear-gradient(180deg, #07111e 0%, #020812 49%, #01040a 100%);
-  box-shadow:
-    inset 0 15px 25px rgba(0,0,0,.80),
-    inset 0 0 20px rgba(24,121,218,.16),
-    0 0 0 2px rgba(3,8,14,.92),
-    0 0 0 3px rgba(113,194,255,.40);
+    box-shadow: inset 0 15px 25px rgba(0, 0, 0, .80),
+    inset 0 0 20px rgba(24, 121, 218, .16),
+    0 0 0 2px rgba(3, 8, 14, .92),
+    0 0 0 3px rgba(113, 194, 255, .40);
 }
 
 .portrait-hmi-root .portrait-cos-screen .portrait-adjuster > .portrait-value-circle:after {
-  inset: 28px;
-  border: 1px solid rgba(69,169,255,.72);
-  box-shadow: inset 0 0 12px rgba(22,139,255,.18), 0 0 7px rgba(22,139,255,.22);
+    inset: 28px;
+    border: 1px solid rgba(69, 169, 255, .72);
+    box-shadow: inset 0 0 12px rgba(22, 139, 255, .18), 0 0 7px rgba(22, 139, 255, .22);
 }
 
 .portrait-hmi-root .portrait-cos-screen .portrait-value-circle__content {
-  gap: 11px;
+    gap: 11px;
 }
 
 .portrait-hmi-root .portrait-cos-screen .portrait-value-circle__content span {
-  margin: 0;
-  color: #eaf4ff;
-  text-shadow: 0 1px 8px rgba(84,166,255,.24);
+    margin: 0;
+    color: #eaf4ff;
+    text-shadow: 0 1px 8px rgba(84, 166, 255, .24);
+    display: block;
+    width: 100%;
+    text-align: center;
 }
 
 .portrait-hmi-root .portrait-cos-screen .portrait-value-circle__reading {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  justify-content: center;
-  gap: 8px;
-  min-width: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+    gap: 8px;
+    min-width: 0;
 }
 
 .portrait-hmi-root .portrait-cos-screen .portrait-value-circle__reading strong,
 .portrait-hmi-root .portrait-cos-screen .portrait-value-circle__reading small {
-  display: block;
-  margin: 0;
-  color: #fff;
+    display: block;
+    margin: 0;
+    color: #fff;
 }
 
 .portrait-hmi-root .portrait-cos-screen .portrait-value-circle__reading strong {
-  text-shadow: 0 1px 1px rgba(255,255,255,.18), 0 0 10px rgba(95,165,255,.08);
+    text-shadow: 0 1px 1px rgba(255, 255, 255, .18), 0 0 10px rgba(95, 165, 255, .08);
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__reading strong.portrait-value-circle__value--decimal {
+    letter-spacing: -18px;
+    margin-right: 18px;
+}
+
+.portrait-hmi-root .portrait-cos-screen .portrait-value-circle__reading strong.portrait-value-circle__value--two-digit {
+    letter-spacing: -7px;
 }
 
 .portrait-hmi-root .portrait-cos-screen .portrait-value-circle__reading small {
-  font-size: 23px;
-  font-weight: 650;
-  letter-spacing: .01em;
-  transform: translateY(-2px);
+    font-size: 23px;
+    font-weight: 650;
+    letter-spacing: .01em;
+    transform: translateY(-2px);
 }
